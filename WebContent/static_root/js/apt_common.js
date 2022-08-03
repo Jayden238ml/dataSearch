@@ -1781,7 +1781,7 @@ function isNumber(str) {
 			AES_YN = "N";
 		}
 
-		window.open("/common/index.do?jPath=swfUpload/swfPopup&LIMIT_FILE_CNT="+LIMIT_FILE_CNT+"&AES_YN="+AES_YN
+		window.open("/common/index.do?jPath=popUpload/swfPopup&LIMIT_FILE_CNT="+LIMIT_FILE_CNT+"&AES_YN="+AES_YN
 				,"swfUpload","top=0px, left=100px, height=450px, width=480px, status=no, scrollbars=yes,location=no ,toolbar=no,menubar=no,resizable=no");
 	}
 	// swfUpload 팝업 (닷넷소스
@@ -1789,7 +1789,7 @@ function isNumber(str) {
 		if (LIMIT_FILE_CNT == undefined || LIMIT_FILE_CNT == "") {
 			LIMIT_FILE_CNT = 500;
 		}
-		window.open("/common/index.do?jPath=swfUpload/swfPopup&LIMIT_FILE_CNT="+LIMIT_FILE_CNT+"&AES_YN=N&F_PATH="+ F_PATH + "&RTN_FN_NM="+RTN_FN_NM + "&USRID=" + INTG_UID
+		window.open("/common/index.do?jPath=popUpload/swfPopup&LIMIT_FILE_CNT="+LIMIT_FILE_CNT+"&AES_YN=N&F_PATH="+ F_PATH + "&RTN_FN_NM="+RTN_FN_NM + "&USRID=" + INTG_UID
 				,"swfUpload","top=0px, left=100px, height=450px, width=480px, status=no, scrollbars=yes,location=no ,toolbar=no,menubar=no,resizable=no");
 	}
 
@@ -2501,3 +2501,4 @@ function isNumber(str) {
 	function allCheckInLayer(obj,layerId) {
 		$('#'+layerId).find("input[type=checkbox]").attr("checked",checkCheckbox(obj));
 	}
+	

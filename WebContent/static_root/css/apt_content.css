@@ -670,7 +670,7 @@ ul.capability_graph_tap li a.on {color:#fff; background-color:#606a74;}
 .statistics_graph .graph2 p {width:175px; margin:0 auto; padding-top:5px;}
 
 /* 외부상담사 로그인, 통합로그인 */
-.loginLayer {left:50%; top:50%; width:640px; border-top:#005596 5px solid; background:#fff; z-index:10;}
+.loginLayer {left:50%; top:50%; width:640px; border-top:#005596 5px solid; background:#fff; z-index:50;}
 .loginLayer > p {position:absolute; margin:-5px 0 0 640px;}
 .loginLayer > div > h1 {margin-top:70px; text-align:center; font-size:40px; line-height:40px; letter-spacing:-2.5px; color:#000; font-weight:500;}
 .loginLayer > div > h1 span {color:#005596;}
@@ -783,7 +783,7 @@ ul.capability_graph_tap li a.on {color:#fff; background-color:#606a74;}
 
 
 /* 검색창 영역 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-.user_sch select {height:40px; box-sizing:border-box; padding-left:3px; apperance:none; -webkit-appearance:none; -moz-appearance:none; background:url('../images/common/select_arr.png') 98% center no-repeat;}
+.user_sch select {height:40px; box-sizing:border-box; padding-left:3px; apperance:none; -webkit-appearance:none; -moz-appearance:none; background:url('../images/common/select_arrow.png') 98% center no-repeat;}
 .user_sch select::-ms-expand {display:none;}
 .user_sch input {height:40px; box-sizing:border-box; padding-left:3px;}
 
@@ -1083,4 +1083,70 @@ ul.capability_graph_tap li a.on {color:#fff; background-color:#606a74;}
 	/* 검사/상담신청 - 검사안내 및 신청 */
 	.testSelcList > li > div > div > ul > li > div.tooltip > ul.tooltiptext {width:200px;}
 	.testSelcList > li > div > div > ul > li > div.tooltip > ul.tooltiptext > li {font-size:13px;}
+}
+
+
+
+/* 약관 */
+.privacy-area {width:1200px; margin:0 auto; padding:0 0 80px 0; overflow:hidden;}
+.privacy-area > h1 {margin-top:60px; font:700 24px/30px 'NotoSansKR'; color:#333;}
+.privacy-area > h2 {margin-top:40px; font:500 20px/28px 'NotoSansKR'; color:#333;}
+.privacy-area > h3 {margin-top:30px; font:500 16px/24px 'NotoSansKR'; color:#333;}
+.privacy-area > div {margin-top:15px; font:300 14px/28px 'NotoSansKR';}
+.privacy-area > ul {width:100%; margin-top:30px; padding:30px; border:#e5e5e5 1px solid; background:#f9f9f9; overflow:hidden;}
+.privacy-area > ul li {padding:10px 0;}
+.privacy-area > ul li a {font:500 16px/24px 'NotoSansKR'; color:#333;}
+
+@media all and (max-width:479px) {
+.privacy-area {width:320px;}
+.privacy-area > h1 {font:700 20px/30px 'NotoSansKR';}
+.privacy-area > h2 {font:500 17px/27px 'NotoSansKR';}
+.privacy-area > h3 {font:500 15px/23px 'NotoSansKR'; color:#333;}
+.privacy-area > div {font:300 13px/26px 'NotoSansKR';}
+.privacy-area > ul li a {font:500 14px/22px 'NotoSansKR';}
+}
+@media all and (min-width:480px) and (max-width:767px) {
+.privacy-area {width:470px;}
+.privacy-area > h1 {font:700 20px/30px 'NotoSansKR';}
+.privacy-area > h2 {font:500 17px/27px 'NotoSansKR';}
+.privacy-area > h3 {font:500 15px/23px 'NotoSansKR'; color:#333;}
+.privacy-area > div {font:300 13px/26px 'NotoSansKR';}
+.privacy-area > ul li a {font:500 14px/22px 'NotoSansKR';}
+}
+@media all and (min-width:768px) and (max-width:991px) {
+.privacy-area {width:750px;}
+}
+@media all and (min-width:992px) and (max-width:1199px) {
+.privacy-area {width:970px;}
+}
+@media all and (min-width:1200px) {
+
+}
+
+
+
+/* 공통 - 기본  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* 타이틀 */
+.title-area {width:1200px; margin:0 auto; padding:170px 0 50px 0; overflow:hidden;}
+.title-area > h1 {text-align:center; font-weight:bold; font-size:40px; line-height:40px; color:#333;}
+.title-area > h2 {margin-top:20px; text-align:center; font-size:18px; line-height:26px; color:#333;}
+
+@media all and (max-width:479px) {
+.title-area {width:320px; padding:120px 0 50px 0;}
+.title-area > h1 {font-size:30px; line-height:30px;}
+.title-area > h2 {font-size:14px; line-height:22px;}
+}
+@media all and (min-width:480px) and (max-width:767px) {
+.title-area {width:470px; padding:120px 0 50px 0;}
+.title-area > h1 {font-size:30px; line-height:30px;}
+.title-area > h2 {font-size:14px; line-height:22px;}
+}
+@media all and (min-width:768px) and (max-width:991px) {
+.title-area {width:750px; padding:120px 0 50px 0;}
+}
+@media all and (min-width:992px) and (max-width:1199px) {
+.title-area {width:970px;}
+}
+@media all and (min-width:1200px) {
+
 }

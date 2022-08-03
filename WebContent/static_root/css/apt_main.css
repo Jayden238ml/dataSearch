@@ -2,7 +2,22 @@
 
 
 /* 올마이티컴퍼니  - 메인  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media all and (max-width:479px) {
 #main_wrap {position:relative; width:100%;}
+}
+@media all and (min-width:480px) and (max-width:767px) {
+#main_wrap {position:relative; width:100%;}
+}
+@media all and (min-width:768px) and (max-width:991px) {
+#main_wrap {position:relative; width:100%;}
+}
+@media all and (min-width:992px) and (max-width:1199px) {
+#main_wrap {position:relative; width:100%; margin-top: 65px;}
+}
+@media all and (min-width:1200px) {
+#main_wrap {position:relative; width:100%; margin-top: 85px;}
+}
 
 
 /* 레이어팝업 */
@@ -50,7 +65,7 @@
 .mn_visual {position:relative; width:100%; height:540px; background:url('../images/main/visual.jpg') center center no-repeat; background-size:cover; overflow:hidden;}
 
 .mn_slogan {width:1200px; margin:90px auto 0 auto; overflow:hidden;}
-.mn_slogan > h2 {font-size:48px; line-height:56px; font-weight:bold; color:#fff; text-align:center;}
+.mn_slogan > h2 {font-size:48px; line-height:56px; font-weight:bold; color:#5154af; text-align:center;}
 
 /* 상단 퀵메뉴 */
 .mn_quick {position:absolute; left:0; bottom:0; width:100%; overflow:hidden;}
@@ -158,34 +173,6 @@
 .mn_ext_card .ext_card_list:hover > div.hover_details > .view_dt {position:absolute; left:0; bottom:0; width:100%; font-size:15px; font-weight:500; color:#fff; letter-spacing:-0.5px; text-align:center; box-sizing:border-box; padding:12px 10px; background:#3279d4;}
 
 
-/* .mn_ext_card .ext_card_list > div.hover_details > div.cardInfo {position:absolute; bottom:0; width:100%; box-sizing:border-box; padding:12px 10px; color:#fff;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_title {margin-bottom:50px; text-align:center; overflow:hidden;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_title > span {height:20px; display:block; font-size:12px;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_title > h4 {
-	font-size:16px; font-weight:500; letter-spacing:-1px; margin:8px 0; 
-	display:block; display:-webkit-box; height:44px; line-height:22px; 
-	white-space:normal; text-overflow:ellipsis; word-break:keep-all;
-	-webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_title > em {display:inline-block; font-style:normal; font-size:13px;}
-
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_date {padding-bottom:10px; margin-bottom:10px; overflow:hidden;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_date > div {overflow:hidden;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_date > div > span {display:inline-block; width:55px; text-align:center; padding:5px 0; font-size:12px; line-height:12px; color:#fff;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_date > div > span.recruit_ing {background:#8560a8;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_date > div > span.recruit_end {background:#7b818c;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_date > div > strong {display:inline-block; font-weight:normal; margin-left:5px;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_date > dl {position:relative; margin-top:5px; overflow:hidden;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_date > dl > dt {position:absolute; top:46%; left:0; width:75%; height:3px; background:#d5d5d5;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_date > dl > dt span.date_bar {display:inline-block; height:3px; background:#3a64b3;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_date > dl > dd {float:right; width:25%; text-align:right; font-size:13px; margin-right:5px;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_date > dl > dd > strong {color:#ff9e00; font-weight:500;}
-
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_count {overflow:hidden;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_count > ul {padding:5px 8px; border:1px solid rgba(255,255,255,0.7); overflow:hidden; }
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_count > ul > li {position:relative; box-sizing:border-box; padding:0; text-align:left;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_count > ul > li img {display:inline-block; height:15px;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_count > ul > li strong {display:inline-block; font-size:12px; line-height:12px; letter-spacing:-0.5px; font-weight:500; margin-left:5px;}
-.mn_ext_card .ext_card_list > div.hover_details > div.cardInfo > ul > li.cardInfo_count > ul > li em {display:inline-block; padding-left:3px; font-size:12px; line-height:12px; font-style:normal;} */
 
 #MN_card_ext .card-prev {position:absolute; top:30%; right:0; display:table; width:55px; height:55px; text-align:center; color:#fff; border-radius:50%; border:1px solid #ccc; background:#fff; z-index:99; cursor:pointer;}
 #MN_card_ext .card-next {position:absolute; top:50%; right:0; display:table; width:55px; height:55px; text-align:center; color:#fff; border-radius:50%; border:1px solid #ccc; background:#fff; z-index:99; cursor:pointer;}

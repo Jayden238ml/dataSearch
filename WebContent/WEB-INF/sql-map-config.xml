@@ -19,11 +19,9 @@
 	<mappers>
 		<mapper resource="apt/sqlmap/board.xml" />
 		<mapper resource="apt/sqlmap/common.xml" />
-		<mapper resource="apt/sqlmap/menu.xml" />
-		<mapper resource="apt/sqlmap/menuSession.xml" />
 		<mapper resource="apt/sqlmap/system.xml" />
-		<mapper resource="apt/sqlmap/member.xml" />
-		<mapper resource="apt/sqlmap/illumi.xml" />
+		<mapper resource="apt/sqlmap/warrant.xml" />
+		<mapper resource="apt/sqlmap/api.xml" />
 		
 	</mappers>
 </configuration>
