@@ -59,15 +59,15 @@
 		<div class="ft_top">
 			<h3><img src="/static_root/images/common/apt_footer_logo.jpg" alt="올마이티컴퍼니" /></h3>
 			<div class="ft_menu">
-				<a href="javascript:fnAgreePop('1');" class="on">이용약관</a>
-				<a href="javascript:fnAgreePop('2');" class="on">개인정보취급방침</a>
+<!-- 				<a href="javascript:fnAgreePop('1');" class="on">이용약관</a> -->
+<!-- 				<a href="javascript:fnAgreePop('2');" class="on">개인정보취급방침</a> -->
 <!-- 				<a style="text-decoration:none;color:#78849e;">통신판매신고 제 2021-경기안산-2037</a> -->
 <!-- 				<a style="text-decoration:none;color:#78849e;">사업자번호 : 713-88-02096</a> -->
 				
 			</div>
 		</div>
 		<ul class="ft_btm">
-			<li>COPYRIGHT &copy;2021 <strong>주식회사 올마이티컴퍼니</strong>. ALL RIGHT RESERVED.
+			<li>COPYRIGHT &copy;2022 <strong>DataSearch</strong>. ALL RIGHT RESERVED.
 <!-- 			| 경기도 안산시 단원구 풍전로7 비동4층 410-에이 76호 대표이사 정 재 식 -->
 			</li>
 		</ul>
