@@ -32,10 +32,10 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>
 
-	<bean id="jsonView" class="apt.framework.util.JsonView"></bean>
+	<bean id="jsonView" class="dataSearch.framework.util.JsonView"></bean>
 	<!-- ========================= DEFINITIONS OF PUBLIC CONTROLLERS ========================= -->
 	
-	<context:component-scan base-package="apt" /> <!-- 어노테이션 스캔 경로 -->
+	<context:component-scan base-package="dataSearch" /> <!-- 어노테이션 스캔 경로 -->
 
 	<!-- <bean id="defaultHandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/> -->
 
@@ -53,7 +53,7 @@
 	</bean>
 
 	<!-- 엑셀 생성 -->
-	<bean id="excelView" class="apt.framework.common.ExcelView"></bean>
+	<bean id="excelView" class="dataSearch.framework.common.ExcelView"></bean>
 
 	<!-- 로컬 서버  -->
 	<bean id="uploadDirResource" class="org.springframework.core.io.FileSystemResource">	

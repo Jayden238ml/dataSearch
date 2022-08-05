@@ -5,11 +5,11 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import apt.framework.common.DataMap;
-import apt.framework.util.MessageUtil;
-import apt.framework.util.PUtil;
-
 import org.springframework.web.bind.annotation.ModelAttribute;
+
+import dataSearch.framework.common.DataMap;
+import dataSearch.framework.util.MessageUtil;
+import dataSearch.framework.util.PUtil;
 
 public class MailDataSet {
 	public MailDataSet(){}

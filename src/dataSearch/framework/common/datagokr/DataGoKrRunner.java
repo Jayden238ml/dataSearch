@@ -48,7 +48,7 @@ public class DataGoKrRunner {
         
 		
 		ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-    	ClassPathResource classPathResource = new ClassPathResource("apt/framework/common/datagokr/DataGoKr.yml");
+    	ClassPathResource classPathResource = new ClassPathResource("dataSearch/framework/common/datagokr/DataGoKr.yml");
 		File file = classPathResource.getFile();
     	DataGoKr conf = mapper.readValue(file, DataGoKr.class);
     	System.out.println(conf);

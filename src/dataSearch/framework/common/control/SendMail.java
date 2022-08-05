@@ -20,10 +20,10 @@ import javax.mail.internet.MimeMultipart;
 import javax.mail.internet.MimeUtility;
 import javax.servlet.http.HttpServletRequest;
 
-import apt.framework.util.MessageUtil;
-
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.MultiPartEmail;
+
+import dataSearch.framework.util.MessageUtil;
 
 public class SendMail {
 	public SendMail(){}
