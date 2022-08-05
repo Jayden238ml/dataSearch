@@ -1,0 +1,10 @@
+
+* 필요 테이블
+ COM_CONN_TEMP : 20초 배치
+ DEAL_APT_INFO : 매매 마스터
+ PARCEL_OUT_INFO : 매매 디테일
+
+
+
+
+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
