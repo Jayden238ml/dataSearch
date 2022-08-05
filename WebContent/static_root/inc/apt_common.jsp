@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"        prefix="fmt" %>
 <%@ taglib tagdir="/WEB-INF/tags"        				prefix="uTld" %>
-<%@ page import="apt.framework.util.MessageUtil" %>
+<%@ page import="dataSearch.framework.util.MessageUtil" %>
 <%
 	String COMMON_JS_CONF = MessageUtil.getMessage("COMMON_JS_CONF");				// 사용자 JS 경로
 	String COMMON_IMAGES_CONF = MessageUtil.getMessage("COMMON_IMAGES_CONF");		// 사용자 이미지 경로

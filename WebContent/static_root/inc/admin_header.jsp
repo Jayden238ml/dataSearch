@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"        prefix="fmt" %>
 <link type="text/css" rel="stylesheet" href="<c:out value='${COMMON_CSS_CONF}' />/top-style.css" media=""/>
-<%@ page import="apt.framework.common.DataMap" %>
+<%@ page import="dataSearch.framework.common.DataMap" %>
 <%
 	DataMap dataMap = (DataMap)request.getAttribute("INIT_DATA");
 	if ("".equals(dataMap.getString("SESSION_USER_ID")) || !"Y".equals(dataMap.getString("SESSION_ADMIN_YN")) || !"AMC".equals(dataMap.getString("SESSION_USER_TYPE"))) {
