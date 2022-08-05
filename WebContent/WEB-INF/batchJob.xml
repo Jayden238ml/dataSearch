@@ -6,7 +6,7 @@
 
 
 	 <bean id="DairyBatch" class="org.springframework.scheduling.quartz.JobDetailBean">
-		<property name="jobClass" value="apt.batch.DairyBatch"/>
+		<property name="jobClass" value="dataSearch.batch.DairyBatch"/>
 		<property name="jobDataAsMap">
 			<map>
 				<entry key="commonImpl" value-ref="commonImpl" />
@@ -29,7 +29,7 @@
 	<!-- 
 	2
 	<bean id="DairyBatch2" class="org.springframework.scheduling.quartz.JobDetailBean">
-		<property name="jobClass" value="apt.batch.DairyBatch2"/>
+		<property name="jobClass" value="dataSearch.batch.DairyBatch2"/>
 		<property name="jobDataAsMap">
 			<map>
 				<entry key="commonImpl" value-ref="commonImpl" />
@@ -53,7 +53,7 @@
 	<!--
 	3 
 	<bean id="DairyBatch3" class="org.springframework.scheduling.quartz.JobDetailBean">
-		<property name="jobClass" value="apt.batch.DairyBatch3"/>
+		<property name="jobClass" value="dataSearch.batch.DairyBatch3"/>
 		<property name="jobDataAsMap">
 			<map>
 				<entry key="commonImpl" value-ref="commonImpl" />

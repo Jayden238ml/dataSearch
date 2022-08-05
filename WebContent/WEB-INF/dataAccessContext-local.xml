@@ -41,7 +41,7 @@
 		<property name="password" value="${jdbc.password}" />
 	</bean>
 
-	<bean id="dataGoKrSource" class="apt.framework.common.datagokr.DataGoKrService">
+	<bean id="dataGoKrSource" class="dataSearch.framework.common.datagokr.DataGoKrService">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
@@ -76,11 +76,11 @@
 	</bean>
 
 	<!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= -->
-	<bean id="sqlMapCommonDao" class="apt.framework.core.SqlMapCommonDao">
+	<bean id="sqlMapCommonDao" class="dataSearch.framework.core.SqlMapCommonDao">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 
-	<bean id="commonImpl" class="apt.framework.core.CommonImpl">
+	<bean id="commonImpl" class="dataSearch.framework.core.CommonImpl">
 		<property name="commonDao" ref="sqlMapCommonDao" />
 	</bean>
 	
