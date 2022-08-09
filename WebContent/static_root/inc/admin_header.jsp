@@ -141,7 +141,7 @@ function fnAmcSa(){
 </form>
 <div id="a_header">
 	<dl>
-		<dt><a href="/main.do"><img src="/static_root/images/common/apt_adm_logo.jpg" alt="올마이컴퍼니" title="올마이컴퍼니" /></a></dt>
+		<dt><a href="/main.do"><img src="/static_root/images/common/apt_adm_logo.jpg" alt="데이터서치" title="데이터서치" /></a></dt>
 		<dd>
 			<ul>
 				<li><a href="javascript:fnClickTopMenu('A_TMC0001');" >시스템 관리</a></li>
@@ -163,7 +163,7 @@ function fnAmcSa(){
 <div id="header-mobile">
 	<ul class="hm-top">
 		<li>
-			<h1><a href="javascript:fnMain();"><img src="/static_root/images/common/apt_adm_logo.jpg" height="32" alt="올마이컴퍼니" title="올마이컴퍼니" /></a></h1>
+			<h1><a href="javascript:fnMain();"><img src="/static_root/images/common/apt_adm_logo.jpg" height="32" alt="데이터서치" title="데이터서치" /></a></h1>
 		</li>
 		<li><i class="ion-android-menu" aria-hidden="true" id="mobileLnbOpen"></i></li>
 	</ul>
@@ -172,7 +172,7 @@ function fnAmcSa(){
 	
 		<div class="hm-total">
 		<ul class="total-tit">
-			<li><img src="/static_root/images/common/apt_adm_logo.jpg" height="30" alt="올마이컴퍼니" title="올마이컴퍼니" /></li>
+			<li><img src="/static_root/images/common/apt_adm_logo.jpg" height="30" alt="데이터서치" title="데이터서치" /></li>
 			<li><i id="mobileLnbClose" class="ion-close" aria-hidden="true"></i></li>
 		</ul>
 		<ul class="total-btn">
