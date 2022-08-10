@@ -6,5 +6,18 @@
 
 
 
+dataSearch 깃 토큰
+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
 
-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
+
+웹서버 접속
+211.47.75.55 (SSH/SFTP)
+dbsdntkfkd!23
+
+DB 서버 접속
+211.47.75.100 (db.datasearch.co.kr)
+dbsdntkfkd!23
+
+
+use dbdatasearch
+set session wait_timeout = 28800

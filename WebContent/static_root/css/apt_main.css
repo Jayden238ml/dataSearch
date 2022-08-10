@@ -178,7 +178,7 @@
 #MN_card_ext .card-next {position:absolute; top:50%; right:0; display:table; width:55px; height:55px; text-align:center; color:#fff; border-radius:50%; border:1px solid #ccc; background:#fff; z-index:99; cursor:pointer;}
 #MN_card_ext .card-prev span, #MN_card_ext .card-next span {display:table-cell; vertical-align:middle;}
 
-/* 상담 */
+
 .box_con {position:relative; background:url('../images/main/mn_box_illust03.png') 90% 170px no-repeat, #596ad2; cursor:pointer;}
 .box_con > h3 {color:#fff;}
 .box_con > p {color:rgba(255,255,255,0.8);}
@@ -200,13 +200,13 @@
 .box_con > .consult_hover > ul > li.psy_con > span {background:#bcdf05;}
 .box_con > .consult_hover > ul > li.job_con > span {background:#0071be;}
 
-/* 전공별경력개발로드맵 */
+
 .box_majorRm {background:url('../images/main/mn_box_illust04.png') 90% 170px no-repeat, #ebf6ff; cursor:pointer;}
 .box_majorRm > h3 {color:#132847;}
 .box_majorRm > p {color:rgba(69,79,99,0.8);}
 .box_majorRm > a {color:#454f63; border:1px solid #b6bac5;}
 
-/* 공지사항 */
+
 .box_notice {background:#fff;}
 .box_notice > div {margin-bottom:20px; overflow:hidden;}
 .box_notice > div > h3 {float:left; font-size:24px; line-height:28px; font-weight:500; color:#454f63;}
@@ -220,13 +220,17 @@
 .box_notice > ul > li > a:hover {color:#3279d4;}
 .box_notice > ul > li > span {float:right; display:inline-block; font-size:15px; line-height:18px; color:#aaa; letter-spacing:-0.5px; padding-right:2px;}
 
-/* 자기주도활동 */
+
 .box_selfAc {background:url('../images/main/mn_box_illust06.png') 90% 170px no-repeat, #f75a85; cursor:pointer;}
 .box_selfAc > h3 {color:#fff;}
 .box_selfAc > p {color:rgba(255,255,255,0.8);}
 .box_selfAc > a {color:#fff; border:1px solid #fff;}
 
-/* 채용정보 */
+.box_selfLs {background:url('../images/main/mn_box_illust06.png') 90% 170px no-repeat, #66CC00; cursor:pointer;}
+.box_selfLs > h3 {color:#fff;}
+.box_selfLs > p {color:rgba(255,255,255,0.8);}
+.box_selfLs > a {color:#fff; border:1px solid #fff;}
+
 .box_jobInfo {background:url('../images/main/mn_box_illust07.png') 90% 170px no-repeat, #00b6dd; cursor:pointer;}
 .box_jobInfo > h3 {color:#fff;}
 .box_jobInfo > p {color:rgba(255,255,255,0.8);}

@@ -5,7 +5,7 @@
 
 <mapper namespace="Api">
 
-	<select id="getParcelOutInfo_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getParcelOutInfo_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			COUNT(*) AS TOTAL_CNT
 		FROM PARCEL_OUT_INFO A  
@@ -31,7 +31,7 @@
 	</select>
 	
 	
-	<select id="getParcelOutInfo_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getParcelOutInfo_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.*
 		FROM(
@@ -48,6 +48,9 @@
 						  *
 					FROM PARCEL_OUT_INFO A
 					WHERE 1 = 1	
+					<if test="DEFAULT == 'Y'.toString()">
+						AND REGIONAL_CODE = '11680'
+					</if>
 					<if test="SCH_TOP_LAWD_CD != null and SCH_TOP_LAWD_CD != ''">
 						AND SUBSTRING(A.REGIONAL_CODE, 1,2) = SUBSTRING(#{SCH_TOP_LAWD_CD}, 1,2)
 					</if>
@@ -78,7 +81,7 @@
 	</select>
 	
 	
-	<select id="getDealAptInfo_CNT"  parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getDealAptInfo_CNT"  parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			COUNT(*) AS TOTAL_CNT
 		FROM(
@@ -116,7 +119,7 @@
 	
 	
 	
-	<select id="getDealAptInfo_List"  parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getDealAptInfo_List"  parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.* 
 		FROM(
@@ -130,9 +133,20 @@
 					, @RNUM := @RNUM + 1  AS RNUM
 				FROM(
 					SELECT
-						  A.*
+<!-- 						  A.* -->
+						  A.ROAD_NAME_BONBUN
+						, A.AREA_EXCLUSIVE_USE
+						, A.APARTMENT_NAME
+						, MAX(A.FLOOR) AS FLOOR
+						, MAX(A.DEAL_AMOUNT) AS DEAL_AMOUNT
+						, MAX(A.DEAL_YEAR) AS DEAL_YEAR
+						, MAX(A.DEAL_MONTH) AS DEAL_MONTH
+						, MAX(A.DEAL_DAY) AS DEAL_DAY
 					FROM DEAL_APT_INFO A 
 					WHERE 1 = 1	
+					<if test="DEFAULT == 'Y'.toString()">
+						AND ROAD_NAME_SIGUNGU_CODE = '11680'
+					</if>
 					<if test="SCH_TOP_LAWD_CD != null and SCH_TOP_LAWD_CD != ''">
 						AND SUBSTRING(A.REGIONAL_CODE, 1,2) = SUBSTRING(#{SCH_TOP_LAWD_CD}, 1,2)
 					</if>
@@ -149,6 +163,7 @@
 					<if test="SCH_AREA_EXCLUSIVE_USE != null and SCH_AREA_EXCLUSIVE_USE != ''">
 						AND A.AREA_EXCLUSIVE_USE LIKE CONCAT('%', #{SCH_AREA_EXCLUSIVE_USE},'%')
 					</if>
+					GROUP BY A.ROAD_NAME_BONBUN, A.AREA_EXCLUSIVE_USE
 					ORDER BY A.DEAL_YEAR DESC, CAST(A.DEAL_MONTH AS UNSIGNED) DESC, CAST(A.DEAL_DAY AS UNSIGNED)DESC
 					<if test="DEFAULT == 'Y'.toString()">
 						LIMIT 10
@@ -161,7 +176,7 @@
 	</select>
 	
 	
-	<select id="getDealAptInfoSearch_List"  parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getDealAptInfoSearch_List"  parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.* 
 		FROM(
@@ -317,7 +332,7 @@
 	</delete>
 	
 	
-	<select id="getSiGunGuNmData" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getSiGunGuNmData" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT 
 		    A.CODENM
 		  , (SELECT CODENM FROM COM_CODE WHERE GRP_CODE = '0001' AND A.UP_CODE = CODE )AS UP_NM
@@ -327,7 +342,7 @@
 	</select>
 	
 	
-	<select id="getAptDeal_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptDeal_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			A.*
 			, REPLACE(REPLACE(DEAL_AMOUNT, ',', ''), ' ', '')AS MAX_AMT 
@@ -339,7 +354,7 @@
 	</select>
 	
 	
-	<select id="getAptDeal_ChartList" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptDeal_ChartList" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			T.*
 		FROM(
@@ -369,7 +384,7 @@
 	</update>
 	
 	
-	<select id="getAptParcelOut_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptParcelOut_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			A.*
 		FROM PARCEL_OUT_INFO A
@@ -381,7 +396,7 @@
 	</select>
 	
 	
-	<select id="getAptParcelOut_ChartList" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptParcelOut_ChartList" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			T.*
 		FROM(
@@ -414,7 +429,7 @@
 	</update>
 	
 	
-	<select id="serachComPareAptDeal_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="serachComPareAptDeal_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  APARTMENT_NAME
 			, ADDRESS
@@ -428,7 +443,7 @@
 		ORDER BY AREA_EXCLUSIVE_USE DESC
 	</select>
 	
-	<select id="getAptCompareDeal_ChartList" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptCompareDeal_ChartList" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			T.*
 		FROM(
@@ -455,7 +470,7 @@
 		ORDER BY DEAL_YEAR, DEAL_MONTH
 	</select>
 	
-	<select id="getAptCompareOut_ChartList" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptCompareOut_ChartList" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			T.* 
 		FROM(
@@ -486,7 +501,7 @@
 	
 	
 	
-	<select id="serachComPareAptOut_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="serachComPareAptOut_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  APARTMENT_NAME
 			, CONCAT(SIGUNGU, DONG, JIBUN) AS ADDRESS

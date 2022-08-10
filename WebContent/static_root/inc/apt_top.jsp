@@ -12,7 +12,7 @@ response.setHeader("Cache-Control", "no-cache");
 <META HTTP-EQUIV="Expires" CONTENT="-1">
 <meta name="format-detection" content="telephone=no" /> <!-- 익스플로러 전화번호 효과 제거 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>올마이티컴퍼니</title>
+<title>데이터서치</title>
 <%@ include file="apt_common.jsp" %>
 <link rel="shortcut icon" href="/static_root/images/common/favicon.ico">
 <link type="text/css" rel="stylesheet" href="<c:out value='${COMMON_CSS_CONF}' />/apt_common.css" media=""/><!-- 초기화/공통/레이아웃 -->

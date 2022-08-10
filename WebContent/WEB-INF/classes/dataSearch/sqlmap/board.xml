@@ -60,7 +60,7 @@
 	</update>
 	
 	
-	<select id="getQnaBoard_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getQnaBoard_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			COUNT(*) AS TOTAL_CNT
 		FROM COM_BOARD_INFO ,(SELECT @RNUM := 0)  STR	
@@ -90,7 +90,7 @@
 		</if>
 	</select>
 	
-	<select id="getQnaBoard_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getQnaBoard_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.*
 		FROM(
@@ -153,7 +153,7 @@
 	</select>
 	
 	
-	<select id="getQnaBoard_Detail" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getQnaBoard_Detail" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  A.BOARD_SEQ
 			, A.NOTI_YN
@@ -177,7 +177,7 @@
 	</select>
 	
 	
-	<select id="getQnaBoard_AnswerDetail" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getQnaBoard_AnswerDetail" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  A.BOARD_SEQ
 			, A.NOTI_YN
@@ -222,7 +222,7 @@
 	</update>
 	
 	
-	<select id="getAmcNotice_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAmcNotice_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			COUNT(*) AS TOTAL_CNT
 		FROM COM_BOARD_INFO A
@@ -249,7 +249,7 @@
 		</if>
 	</select>
 	
-	<select id="getAmcNotice_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAmcNotice_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.*
 		FROM(
@@ -355,7 +355,7 @@
 	</update>
 	
 	
-	<select id="getMain_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMain_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  BOARD_SEQ
 			, TITLE
@@ -483,7 +483,7 @@
 	</update>
 	
 	
-	<select id="getAmcApt_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAmcApt_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			COUNT(*) AS TOTAL_CNT
 		FROM APT_BOARD_MSTR A LEFT OUTER JOIN COM_CODE B ON A.AREA_SIDO = B.CODE AND B.GRP_CODE = '0001' AND B.USE_YN = 'Y'
@@ -515,7 +515,7 @@
 	</select>
 	
 	
-	<select id="getAmcApt_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAmcApt_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.*
 		FROM(
@@ -584,7 +584,7 @@
 	</select>
 	
 	
-	<select id="getAptBoard_Detail" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptBoard_Detail" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  A.BOARD_SEQ
 			, A.APT_BOARD_TYPE
@@ -612,7 +612,7 @@
 	</select>
 	
 	
-	<select id="getAptBoard_Mstr_Detail" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptBoard_Mstr_Detail" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  A.MST_BOARD_SEQ
 			, A.APT_NM
@@ -642,7 +642,7 @@
 	</update>
 	
 	
-	<select id="getaptInfo1_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getaptInfo1_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			COUNT(*) AS TOTAL_CNT
 		FROM APT_BOARD_MSTR A LEFT OUTER JOIN COM_CODE B ON A.AREA_SIDO = B.CODE AND B.GRP_CODE = '0001' AND B.USE_YN = 'Y'
@@ -676,7 +676,7 @@
 	</select>
 	
 	
-	<select id="getaptInfo1_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getaptInfo1_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.*
 		FROM(

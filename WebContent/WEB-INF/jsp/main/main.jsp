@@ -5,16 +5,16 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="title" content="아파트관리" />
-	<meta name="description" content="아파트,입예협,입주자관리,입주예정자협의회,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
-	<meta name="keywords" content="아파트,입예협,입주자관리,입주예정자협의회,시세조회,분양가조회, 실거래가 비교, 분양가 비교, 올마이아파트" />
+	<meta name="title" content="공공데이터 조회" />
+	<meta name="description" content="아파트,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
+	<meta name="keywords" content="아파트,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
 	<meta name="robots" content="index, follow">
-	<link rel="canonical" href="http://www.allmyapt.com">
+	<link rel="canonical" href="http://www.datasearch.co.kr">
 	<meta property="og:type" content="article" />
-	<meta property="og:site_name" content="아파트관리">
+	<meta property="og:site_name" content="공공데이터 조회">
 	<meta property="og:type" content="article">
-	<meta property="og:url" content="http://www.allmyapt.com">
-	<meta property="og:title" content="아파트정보 | 입주자관리 | 실거래가 조회 | 거래가 비교">
+	<meta property="og:url" content="http://www.datasearch.co.kr">
+	<meta property="og:title" content="아파트정보 | 실거래가 조회 | 거래가 비교">
 	<meta property="og:image" content="/static_root/images/common/meta_img.jpg">
 	<meta property="og:description" content="아파트관리 " />
 
@@ -85,27 +85,33 @@
 			
 			<div class="mn_cont" id="cont">
 				<div class="mn_cont_btm">
-					<div id="cont_box" class="box_selfAc clearfix" onclick="fnMove('1')">
-						<h3>사이트 안내</h3>
-						<p>아파트 관리 시스템<br/>사이트를 소개합니다.</p>
-						<a href="javascript:fnMove('1');">바로 가기 <span>+</span></a>
+					<div id="cont_box" class="box_selfAc clearfix" >
+						<h3>아파트 실거래 이력</h3>
+						<p>아파트 실거래 이력 조회</p>
+						<a href="/user/apt_TradingL.do?L_TMC=TMC004&L_LMC=LMC014">바로 가기 <span>+</span></a>
 					</div>
-					<div id="cont_box" class="box_blue box_jinroRm clearfix" onclick="fnMove('2')">
-						<h3>Q&A</h3>
-						<p>궁금한 모든 내용을 물어보세요.</p>
-						<a href="javascript:fnMove('2');">VIEW MORE <span>+</span></a>
+					<div id="cont_box" class="box_blue box_jinroRm clearfix" >
+						<h3>아파트 분양권 거래이력</h3>
+						<p>아파트 분양권 거래이력 조회</p>
+						<a href="/user/apt_ConceL.do?L_TMC=TMC004&L_LMC=LMC013">VIEW MORE <span>+</span></a>
 					</div>
-					<div id="cont_box" class="box_jobInfo clearfix" onclick="fnMove('3')">
-						<h3>견적문의</h3>
-						<p>DB관리의 편리성, 지금 문의해 보세요.</p>
-						<a href="javascript:fnMove('3');">바로 가기 <span>+</span></a>
+					<div id="cont_box" class="box_jobInfo clearfix" >
+						<h3>실거래가 비교</h3>
+						<p>실거래가 비교 조회</p>
+						<a href="/user/apt_CompareL.do?L_TMC=TMC004&L_LMC=LMC015">바로 가기 <span>+</span></a>
 					</div>
-					<div id="cont_box" class="box_notice clearfix">
+					<div id="cont_box" class="box_selfLs clearfix" >
+						<h3>분양권 비교</h3>
+						<p>분양권 비교 조회</p>
+						<a href="/user/apt_OutCompareL.do?L_TMC=TMC004&L_LMC=LMC016">바로 가기 <span>+</span></a>
+					</div>
+					<%-- <div id="cont_box" class="box_majorRm clearfix">
 						<div class="nt_title clearfix">
-							<h3>공지사항</h3>
-							<a href="javascript:fnMove('4');">VIEW MORE <span>+</span></a>
+							<h3>분양권 비교</h3>
+							<p>분양권 비교 조회</p>
+							<a href="/user/apt_OutCompareL.do?L_TMC=TMC004&L_LMC=LMC016">바로가기 <span>+</span></a>
 						</div>
-						<p>공지사항</p>
+<!-- 						<p>공지사항</p> -->
 						<ul class="nt_list">
  							<c:if test="${not empty INIT_DATA.MainBdList}"> 
  								<c:forEach var="item" items="${INIT_DATA.MainBdList }" varStatus="rowStatus"> 
@@ -119,7 +125,7 @@
  								<li class="clearfix">등록된 공지사항이 없습니다.</li> 
 							</c:if> 
 						</ul>
-					</div>
+					</div> --%>
 				</div>
 				
 			</div>

@@ -5,12 +5,12 @@
 
 <mapper namespace="Common">
 
-	<select id="SelectAs" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="SelectAs" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT * FROM COM_CONN_TEMP
 	</select>
 	
 	
-	<select id="getMenuUserTop"  parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMenuUserTop"  parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT 
 		      M.MENU_CODE
 			, M.MENUNM
@@ -25,7 +25,7 @@
 	</select>
 	
 	
-	<select id="getMenuUserLeft" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMenuUserLeft" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			*
 		FROM SY_MENU M
@@ -44,7 +44,7 @@
 	</select>
 	
 	
-	<select id="getuser_InfoForLogin" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getuser_InfoForLogin" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  USER_ID
 			, USER_NM
@@ -82,7 +82,7 @@
 	
 	
 	<!--첫 레프트 메뉴 -->
- 	<select id="getMenuUserLeftView"  parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+ 	<select id="getMenuUserLeftView"  parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 		      A.MENU_CODE		
 			, A.MENUNM  
@@ -105,7 +105,7 @@
  	</select>
 	
 	<!--첫 레프트 메뉴 -->
- 	<select id="getMenuUserLeftView2"  parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+ 	<select id="getMenuUserLeftView2"  parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 		      A.MENU_CODE		
 			, A.MENUNM  
@@ -169,7 +169,7 @@
  	</insert>
  	
  	
- 	<select id="getuser_DupChk" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+ 	<select id="getuser_DupChk" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
  		SELECT
  			CASE WHEN COUNT(*) > 0 THEN 'Y' ELSE 'N' END AS CNT
  		FROM COM_USER_INFO
@@ -196,7 +196,7 @@
  	</insert>
  	
  	
- 	<select id="getuser_PwdChk" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+ 	<select id="getuser_PwdChk" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
  		SELECT
  			CASE WHEN COUNT(*) > 0 THEN 'Y' ELSE 'N' END AS CNT
  		FROM COM_USER_INFO
@@ -216,7 +216,7 @@
  	</update>
  	
  	
- 	<select id="getSido_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+ 	<select id="getSido_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
  		SELECT
  			  CODE
  			, CODENM
@@ -228,7 +228,7 @@
  	</select>
  	
  	
- 	<select id="getAreaSiGunGu_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+ 	<select id="getAreaSiGunGu_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
  		SELECT
  			  CODE
  			, CODENM
@@ -242,7 +242,7 @@
  	</select>
  	
  	
- 	<select id="getAreaSiGunGu_AllList" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+ 	<select id="getAreaSiGunGu_AllList" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
  		SELECT
  			  CODE
  			, CODENM
@@ -255,7 +255,7 @@
  	</select>
  	
  	
- 	<select id="getErect_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+ 	<select id="getErect_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
  		SELECT
  			  CODE
  			, CODENM

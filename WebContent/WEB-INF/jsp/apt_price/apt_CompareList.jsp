@@ -3,16 +3,16 @@
 <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="title" content="아파트관리" />
-	<meta name="description" content="아파트,입예협,입주자관리,입주예정자협의회,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
-	<meta name="keywords" content="아파트,입예협,입주자관리,입주예정자협의회,시세조회,분양가조회, 실거래가 비교, 분양가 비교, 올마이아파트" />
+	<meta name="title" content="공공데이터 조회" />
+	<meta name="description" content="아파트,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
+	<meta name="keywords" content="아파트,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
 	<meta name="robots" content="index, follow">
-	<link rel="canonical" href="http://www.allmyapt.com">
+	<link rel="canonical" href="http://www.datasearch.co.kr">
 	<meta property="og:type" content="article" />
-	<meta property="og:site_name" content="아파트관리">
+	<meta property="og:site_name" content="공공데이터 조회">
 	<meta property="og:type" content="article">
-	<meta property="og:url" content="http://www.allmyapt.com">
-	<meta property="og:title" content="아파트정보 | 입주자관리 | 실거래가 조회 | 거래가 비교">
+	<meta property="og:url" content="http://www.datasearch.co.kr">
+	<meta property="og:title" content="아파트정보 | 실거래가 조회 | 거래가 비교">
 	<meta property="og:image" content="/static_root/images/common/meta_img.jpg">
 	<meta property="og:description" content="아파트관리 " />
 <title>아파트관리 | 실거래가 비교</title>
@@ -320,7 +320,10 @@
 							<input type="hidden" name="YOU_APARTMENT_NAME" id="YOU_APARTMENT_NAME" value="${INIT_DATA.YOU_APARTMENT_NAME}" />
 							<input type="hidden" name="YOU_ROAD_NAME_BONBUN" id="YOU_ROAD_NAME_BONBUN" value="${INIT_DATA.YOU_ROAD_NAME_BONBUN}" />
 							<input type="hidden" name="YOU_AREA_EXCLUSIVE_USE" id="YOU_AREA_EXCLUSIVE_USE" value="${INIT_DATA.YOU_AREA_EXCLUSIVE_USE}" />
-							<h4 class="title1">우리집과 비교집 검색 후 실거래가 비교를 할 수 있습니다.</h4>
+							<h4 class="title1">
+								우리집과 비교집 검색 후 실거래가 비교를 할 수 있습니다.</br/></br/> 
+								(지역 선택 후 단지명 입력 후 검색버튼을 눌러주세요.)
+							</h4>
 							<div class="bbsView" >
 								<table summary="견적요청">
 									<caption>견적문의</caption>

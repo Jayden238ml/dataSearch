@@ -5,7 +5,7 @@
 
 <mapper namespace="System">
 
-	<select id="getAptuser_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptuser_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			COUNT(*) AS TOTAL_CNT
 		FROM COM_USER_INFO A LEFT OUTER JOIN APT_INFO_MSTR B ON A.APT_CODE = B.APT_CODE
@@ -30,7 +30,7 @@
 		</if>
 	</select> 
 	
-	<select id="getAptuser_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptuser_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.*
 		FROM(
@@ -89,7 +89,7 @@
 	</select>
 	
 	
-	<select id="getAptCodeDup_Chk" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptCodeDup_Chk" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			CASE WHEN COUNT(*) > 0 THEN 'Y' ELSE 'N' END AS DUP_YN
 		FROM COM_USER_INFO
@@ -181,7 +181,7 @@
 	</insert>
 	
 	
-	<select id="getUserInfoDup_Chk" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getUserInfoDup_Chk" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			CASE WHEN COUNT(*) > 0 THEN 'Y' ELSE 'N' END AS DUP_YN
 		FROM COM_USER_INFO
@@ -189,7 +189,7 @@
 	</select>
 	
 	
-	<select id="getUserInfo_Detail" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getUserInfo_Detail" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  A.USER_ID
 			, A.USER_NM
@@ -222,7 +222,7 @@
 		WHERE USER_ID = #{USER_ID}
 	</update>
 	
-	<select id="getSmsSend_infoData" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getSmsSend_infoData" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			CASE WHEN COUNT(*) > 0 THEN 'Y' ELSE 'N' END AS CNT
 		FROM SMS_SEND_INFO

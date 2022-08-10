@@ -157,7 +157,8 @@ a:hover {text-decoration:none; color:#0071bd;}
 #footer > div > .ft_btm > li:nth-child(1) > span {display:inline-block; margin-left:15px;}
 
 /* 좌측메뉴 */
-.leftMenu {width:100%; border-bottom:#b2b2b2 1px solid; margin-top:150px;}
+/* .leftMenu {width:100%; border-bottom:#b2b2b2 1px solid; margin-top:150px;} */
+.leftMenu {width:100%;  margin-top:150px;}
 .leftMenu .userLeftMenuWrap {width:100%; height:130px; box-sizing:border-box; padding: 0px 5px; margin-top:40px; border-radius:0 15px 0 0; background:url('../images/common/leftMenu_bg.jpg') no-repeat; display:table;}
 .leftMenu .adm_userLeftMenuWrap {width:100%; height:130px; box-sizing:border-box; padding: 0px 5px; margin-top:40px; border-radius:0 15px 0 0; background:url('../images/common/adm_left.jpg') no-repeat; display:table;}
 .leftMenu .sms_userLeftMenuWrap {width:100%; height:130px; box-sizing:border-box; padding: 0px 5px; margin-top:40px; border-radius:0 15px 0 0; background:url('../images/common/sms_left.png') no-repeat; display:table;}
@@ -165,6 +166,8 @@ a:hover {text-decoration:none; color:#0071bd;}
 .leftMenu .userLeftMenuWrap p img {border-radius:2px;}
 .leftMenu .userLeftMenuWrap p.userLeftMenu {width:100%; vertical-align:middle; display:table-cell; line-height:1.2;}
 .leftMenu .userLeftMenuWrap p.adminLeftMenu {width:100%; vertical-align:middle; display:table-cell; line-height:1.2;}
+
+.leftMenu .google_adv {width:100%; height:130px; box-sizing:border-box; padding: 0px 5px; margin-top:40px; border-radius:0 15px 0 0; display:table;}
 
 .leftMenu dl {width:100%; overflow:hidden;}
 .leftMenu dl dt {width:100%;}

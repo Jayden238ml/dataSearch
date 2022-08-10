@@ -195,7 +195,7 @@
 		<dt><a href="/main.do"><img src="/static_root/images/common/dataSearch.jpg" alt="데이터서치" title="데이터서치" /></a></dt>
 		<dd>
 			<ul>
-				<li><a href="/user/apt_TradingL.do?LMC=LMC014&TMC=TMC004" <c:if test="${sessionScope.TMC eq 'TMC004'}">class="on"</c:if> title="<c:out value='실거래가 조회'/>"><c:out value="실거래가 조회"/></a></li>
+				<li><a href="/user/apt_TradingL.do?LMC=LMC014&TMC=TMC004" <c:if test="${sessionScope.TMC eq 'TMC004'}">class="on"</c:if> title="<c:out value='아파트 실거래가 조회'/>"><c:out value="아파트 실거래가 조회"/></a></li>
 				<%-- <c:if test="${not empty INIT_DATA.USER_TOP_MENU}">
 					<c:forEach var="item" items="${INIT_DATA.USER_TOP_MENU}">
 						<c:if test="${item.MENU_CODE eq 'TMC003'}">
@@ -323,7 +323,7 @@
 				<ul>
 					<li class="sub-depth2"><a href="javascript:fnLoginChk();" title="아파트 실거래이력"><span>입주자 검색</span></a></li>
 				</ul> --%>
-				<li class="hm-sub sub-depth1"><a href="#"><span>실거래가 조회</span> <i class="ion-android-add" aria-hidden="true"></i></a>
+				<li class="hm-sub sub-depth1"><a href="#"><span>아파트 실거래가 조회</span> <i class="ion-android-add" aria-hidden="true"></i></a>
 				<ul>
 					<li class="sub-depth2"><a href="/user/apt_TradingL.do?TMC=TMC004&LMC=LMC014" title="아파트 실거래이력"><span>아파트 실거래이력</span></a></li>
 					<li class="sub-depth2"><a href="/user/apt_ConceL.do?TMC=TMC004&LMC=LMC013" title="아파트분양권 거래이력"><span>아파트분양권 거래이력</span></a></li>
@@ -335,8 +335,8 @@
 	</div>
 </div>
 <!-- 상단영역 - 모바일 끝 -->
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<!-- <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript">
 	Kakao.init('e5c7d9bd5172ded7a64bab139c62c331');
-</script>
+</script> -->
 

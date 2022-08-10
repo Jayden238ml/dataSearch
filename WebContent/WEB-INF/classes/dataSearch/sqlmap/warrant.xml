@@ -4,7 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Warrant">
-	<select id="getAmcWarrant_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAmcWarrant_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			SUM(TOTAL_CNT)AS TOTAL_CNT 
 		FROM(
@@ -20,7 +20,7 @@
 	</select>
 	
 	
-	<select id="getAmcWarrant_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAmcWarrant_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.*
 		FROM(
@@ -50,7 +50,7 @@
 	</select>
 	
 	
-	<select id="getAptCode_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptCode_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  APT_CODE
 			, APT_NM
@@ -84,7 +84,7 @@
 	</insert>
 	
 	
-	<select id="getMyWarrant_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyWarrant_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			COUNT(*)AS TOTAL_CNT
 		FROM TB_WARRANT_INFO
@@ -115,7 +115,7 @@
 	</select>
 	
 	
-	<select id="getMyWarrant_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyWarrant_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.*
 		FROM(
@@ -186,14 +186,14 @@
 	</select>
 	
 	
-	<select id="getMyAptInfo" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyAptInfo" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			*
 		FROM APT_INFO_MSTR
 		WHERE APT_CODE = #{SESSION_APT_CODE}
 	</select>
 	
-	<select id="getWarrAvg" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getWarrAvg" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 		   TRUNCATE((W_CNT * 100) / T_CNT , 2)AS TOTAL_AVG
 		FROM (
@@ -207,7 +207,7 @@
 		)T
 	</select>
 	
-	<select id="getMyDanzi_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyDanzi_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			DANZI	
 		FROM TB_WARRANT_INFO
@@ -218,7 +218,7 @@
 		LIMIT 9999999
 	</select>
 	
-	<select id="getMyDong_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyDong_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			DONG	
 		FROM TB_WARRANT_INFO
@@ -236,7 +236,7 @@
 	</select>
 	
 	
-	<select id="getMyHosu_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyHosu_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			HOSU	
 		FROM TB_WARRANT_INFO
@@ -252,7 +252,7 @@
 		LIMIT 9999999
 	</select>
 	
-	<select id="getMyDongNoSch_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyDongNoSch_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			DONG	
 		FROM TB_WARRANT_INFO
@@ -267,7 +267,7 @@
 	</select>
 	
 	
-	<select id="getMyHosuNoSch_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyHosuNoSch_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			HOSU	
 		FROM TB_WARRANT_INFO
@@ -281,7 +281,7 @@
 	</select>
 	
 	
-	<select id="LmsExcelDown" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="LmsExcelDown" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			HP
 	      , USER_NM
@@ -311,7 +311,7 @@
 	</select>
 	
 	
-	<select id="getMyAptDetailInfo" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyAptDetailInfo" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  WARRANT_SEQ
 			, APT_CODE
@@ -397,7 +397,7 @@
 	</update>
 	
 	
-	<select id="getMyWarrantHist_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyWarrantHist_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			COUNT(*) AS TOTAL_CNT
 		FROM(
@@ -439,7 +439,7 @@
 	</select>
 	
 	
-	<select id="getMyWarrantHist_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyWarrantHist_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.*
 		FROM(
@@ -502,7 +502,7 @@
 	</select>
 	
 	
-	<select id="getMyWarrantHist_Detail_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyWarrantHist_Detail_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  WARRANT_SEQ
 			, APT_CODE
@@ -537,7 +537,7 @@
 	</select>
 	
 	
-	<select id="getMyamt_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyamt_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  COUNT(*)AS TOTAL_CNT
 		FROM TB_AMT_INFO A LEFT OUTER JOIN TB_WARRANT_INFO B ON A.APT_CODE = B.APT_CODE AND A.DONG = B.DONG AND A.HOSU = B.HOSU
@@ -568,7 +568,7 @@
 	</select>
 	
 	
-	<select id="getMyamt_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyamt_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.*
 		FROM(
@@ -624,7 +624,7 @@
 	</select>
 	
 	
-	<select id="getAptAmtTotal" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptAmtTotal" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			SUM(IFNULL(CAST(AMT AS UNSIGNED), 0)) AS TOTAL_AMT
 		FROM TB_AMT_INFO
@@ -673,7 +673,7 @@
 	</delete>
 	
 	
-	<select id="getMyAptAmtDetailInfo" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyAptAmtDetailInfo" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  APT_CODE
 			, DONG
@@ -714,7 +714,7 @@
 	
 	
 	
-	<select id="getMyWarrantSms_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyWarrantSms_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			COUNT(*)AS TOTAL_CNT
 		FROM TB_WARRANT_INFO
@@ -746,7 +746,7 @@
 	</select>
 	
 	
-	<select id="getMyWarrantSms_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyWarrantSms_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TBA.*
 		FROM(
@@ -818,7 +818,7 @@
 	</select>
 	
 	
-	<select id="getMySmsAmtTot" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMySmsAmtTot" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			IFNULL(MAX(NOW_AMT), 0)AS NOW_AMT
 		FROM SMS_SEND_INFO
@@ -826,7 +826,7 @@
 	</select>
 	
 	
-	<select id="getMyWarrantSmsPop_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getMyWarrantSmsPop_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			SUM(TOTAL_CNT) AS TOTAL_CNT
 		FROM (
@@ -891,7 +891,7 @@
 	</select>
 	
 	
-	<select id="getNowSendTelInfo" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getNowSendTelInfo" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  GROUP_CONCAT(HP) AS HP
 			, GROUP_CONCAT(CONCAT(HP, '|', USER_NM)) AS P_NM
@@ -966,7 +966,7 @@
 	</select>
 	
 	
-	<select id="getTmp" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getTmp" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 		CEIL(#{TOTAL_CNT} / 1000) AS TC
 	</select>
@@ -979,7 +979,7 @@
 		WHERE APT_CODE = #{APT_CODE} 
 	</update>
 	
-	<select id="getAptMstr_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptMstr_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			  APT_CODE
 			, APT_NM
@@ -1006,7 +1006,7 @@
 		)
 	</insert>
 	
-	<select id="getSearchDong_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getSearchDong_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			DONG	
 		FROM TB_WARRANT_INFO
@@ -1017,7 +1017,7 @@
 		LIMIT 9999999
 	</select>
 	
-	<select id="getSearchHosu_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getSearchHosu_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			HOSU	
 		FROM TB_WARRANT_INFO
@@ -1028,7 +1028,7 @@
 		LIMIT 9999999
 	</select>
 	
-	<select id="getAptWarrant_Info" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getAptWarrant_Info" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			*
 		FROM TB_WARRANT_INFO
@@ -1040,7 +1040,7 @@
 	</select>
 	
 	
-	<select id="getSmsSendDtl_CNT" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getSmsSendDtl_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			COUNT(*) AS TOTAL_CNT
 		FROM SMS_SEND_DTL
@@ -1054,7 +1054,7 @@
 	</select>
 	
 	
-	<select id="getSmsSendDtl_List" parameterType="java.util.HashMap" resultType="apt.framework.common.DataMap">
+	<select id="getSmsSendDtl_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
 			TB.*
 		FROM(

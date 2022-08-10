@@ -42,6 +42,7 @@
 </style>
 <div class="site_slide">
 	<ul id="srolling" style="height:62px;">
+	<!-- 구글광고 노출부분 -->
 		<!-- <li><a href="https://www.raemian.co.kr/main.do" target="_blank" title="새창으로 열기"><img src="/static_root/images/common/f_slide1.png" alt="삼성물산" /></a></li>
 		<li><a href="https://www.hdec.kr/" target="_blank" title="새창으로 열기"><img src="/static_root/images/common/f_slide2.png" alt="현대건설" /></a></li>
 		<li><a href="https://www.dlenc.co.kr/" target="_blank" title="새창으로 열기"><img src="/static_root/images/common/f_slide3.png" alt="대림산업" /></a></li>
@@ -57,7 +58,7 @@
 <footer id="footer">
 	<div class="footer_wrap">
 		<!-- <div class="ft_top">
-			<h3><img src="/static_root/images/common/apt_footer_logo.jpg" alt="올마이티컴퍼니" /></h3>
+			<h3><img src="/static_root/images/common/apt_footer_logo.jpg" alt="데이터서치" /></h3>
 			<div class="ft_menu">
 				<a href="javascript:fnAgreePop('1');" class="on">이용약관</a>
 				<a href="javascript:fnAgreePop('2');" class="on">개인정보취급방침</a>

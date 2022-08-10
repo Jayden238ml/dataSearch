@@ -54,4 +54,7 @@ function fnLeftMenuMove(lmc){
 				</c:if>
 			</c:forEach>
 		</c:if> --%>
+		<div class="google_adv">
+<!-- 			구글광고 부분 -->
+		</div>
 	</div>

@@ -3,14 +3,14 @@
 <footer id="footer">
 	<div class="footer_wrap">
 		<div class="ft_top">
-			<h3><img src="/static_root/images/common/apt_footer_logo.jpg" alt="올마이티컴퍼니" /></h3>
+			<h3><img src="/static_root/images/common/apt_footer_logo.jpg" alt="데이터서치" /></h3>
 			<div class="ft_menu">
 <!-- 				<a href="/common/service.do" target="_blank" class="on">이용약관</a> -->
 <!-- 				<a href="/common/privacy.do" target="_blank">개인정보취급방침</a> -->
 			</div>
 		</div>
 		<ul class="ft_btm">
-			<li>COPYRIGHT &copy;2021 <strong>주식회사 올마이티컴퍼니</strong>. ALL RIGHT RESERVED.</li>
+			<li>COPYRIGHT &copy;2021 <strong>주식회사 데이터서치</strong>. ALL RIGHT RESERVED.</li>
 		</ul>
 	</div>
 </footer>

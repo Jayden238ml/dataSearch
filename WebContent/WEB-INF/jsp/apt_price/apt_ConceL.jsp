@@ -3,16 +3,16 @@
 <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="title" content="아파트관리" />
-	<meta name="description" content="아파트,입예협,입주자관리,입주예정자협의회,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
-	<meta name="keywords" content="아파트,입예협,입주자관리,입주예정자협의회,시세조회,분양가조회, 실거래가 비교, 분양가 비교, 올마이아파트" />
+	<meta name="title" content="공공데이터 조회" />
+	<meta name="description" content="아파트,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
+	<meta name="keywords" content="아파트,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
 	<meta name="robots" content="index, follow">
-	<link rel="canonical" href="http://www.allmyapt.com">
+	<link rel="canonical" href="http://www.datasearch.co.kr">
 	<meta property="og:type" content="article" />
-	<meta property="og:site_name" content="아파트관리">
+	<meta property="og:site_name" content="공공데이터 조회">
 	<meta property="og:type" content="article">
-	<meta property="og:url" content="http://www.allmyapt.com">
-	<meta property="og:title" content="아파트정보 | 입주자관리 | 실거래가 조회 | 거래가 비교">
+	<meta property="og:url" content="http://www.datasearch.co.kr">
+	<meta property="og:title" content="아파트정보 | 실거래가 조회 | 거래가 비교">
 	<meta property="og:image" content="/static_root/images/common/meta_img.jpg">
 	<meta property="og:description" content="아파트관리 " />
 <title>아파트관리 | 아파트분양권 거래이역</title>
@@ -172,7 +172,7 @@
 							<table summary="아파트분양권 거래이력">
 								<caption>아파트분양권 거래이력</caption>
 								<colgroup>
-									<col width="150" />
+<!-- 									<col width="150" /> -->
 									<col width="150" />
 									<col width="80" />
 									<col width="80" />		
@@ -180,7 +180,7 @@
 								</colgroup>
 								<thead>
 									<tr>
-										<th>주소</th>
+<!-- 										<th>주소</th> -->
 										<th>단지명(층수)</th>
 										<th>거래금액</th>
 										<th>전용면적</th>
@@ -191,7 +191,7 @@
 									<c:if test="${not empty INIT_DATA.resultList}">
 										<c:forEach items="${INIT_DATA.resultList}" var="item" varStatus="status">
 											<tr>
-												<td><a href="javascript:fnDetail('${item.APARTMENT_NAME}', '${item.REGIONAL_CODE}', '${item.JIBUN}', '${item.AREA_EXCLUSIVE_USE}');">${item.SIGUNGU}&nbsp;${item.JIBUN}</a></td>
+<%-- 												<td><a href="javascript:fnDetail('${item.APARTMENT_NAME}', '${item.REGIONAL_CODE}', '${item.JIBUN}', '${item.AREA_EXCLUSIVE_USE}');">${item.SIGUNGU}&nbsp;${item.JIBUN}</a></td> --%>
 												<td><a href="javascript:fnDetail('${item.APARTMENT_NAME}', '${item.REGIONAL_CODE}', '${item.JIBUN}', '${item.AREA_EXCLUSIVE_USE}');">${item.APARTMENT_NAME}&nbsp;(${item.FLOOR}층)</a></td>
 												<td><a href="javascript:fnDetail('${item.APARTMENT_NAME}', '${item.REGIONAL_CODE}', '${item.JIBUN}', '${item.AREA_EXCLUSIVE_USE}');">${item.DEAL_AMOUNT}(만원)</a></td>
 												<td><a href="javascript:fnDetail('${item.APARTMENT_NAME}', '${item.REGIONAL_CODE}', '${item.JIBUN}', '${item.AREA_EXCLUSIVE_USE}');">${item.AREA_EXCLUSIVE_USE}</a></td>
@@ -201,7 +201,7 @@
 									</c:if>
 									<c:if test="${empty INIT_DATA.resultList}">
 										<tr>
-											<td class="no-list" colspan="5">검색결과가 없습니다.</td>
+											<td class="no-list" colspan="4">검색결과가 없습니다.</td>
 										</tr>
 									</c:if>
 								</tbody>

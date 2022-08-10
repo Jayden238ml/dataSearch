@@ -9,19 +9,19 @@ response.setHeader("Cache-Control", "no-cache");
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="title" content="아파트관리" />
-<meta name="description" content="아파트,입예협,입주자관리,입주예정자협의회,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
-<meta name="keywords" content="아파트,입예협,입주자관리,입주예정자협의회,시세조회,분양가조회, 실거래가 비교, 분양가 비교, 올마이아파트" />
+<meta name="title" content="공공데이터 조회" />
+<meta name="description" content="아파트,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
+<meta name="keywords" content="아파트,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="http://www.allmyapt.com">
+<link rel="canonical" href="http://www.datasearch.co.kr">
 <meta property="og:type" content="article" />
-<meta property="og:site_name" content="아파트관리">
+<meta property="og:site_name" content="공공데이터 조회">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://www.allmyapt.com">
-<meta property="og:title" content="아파트정보 | 입주자관리 | 실거래가 조회 | 거래가 비교">
+<meta property="og:url" content="http://www.datasearch.co.kr">
+<meta property="og:title" content="아파트정보 | 실거래가 조회 | 거래가 비교">
 <meta property="og:image" content="/static_root/images/common/meta_img.jpg">
 <meta property="og:description" content="아파트관리 " />
-<title>올마이티컴퍼니</title>
+<title>데이터서치</title>
 <%@ include file="apt_common.jsp" %>
 <link rel="shortcut icon" href="/static_root/images/common/favicon.ico">
 <link type="text/css" rel="stylesheet" href="<c:out value='${COMMON_CSS_CONF}' />/apt_common.css" media=""/><!-- 초기화/공통/레이아웃 -->
@@ -62,6 +62,3 @@ $(document).ready(function () {
 
 
 </script>
-<body>
-<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script> <script type="text/javascript"> if(!wcs_add) var wcs_add = {}; wcs_add["wa"] = "e5a374cfaf69d8"; if(window.wcs) {wcs_do(); } </script>
-</body>
