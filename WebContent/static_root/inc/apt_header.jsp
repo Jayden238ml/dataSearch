@@ -291,14 +291,15 @@
 		</ul>
 		<div class="total-list">
 			<ul class="hm-menu">
+				<!--
 				<li class="hm-sub sub-depth1"><a href="#"><span>사이트 안내</span> <i class="ion-android-add" aria-hidden="true"></i></a>
-				<ul>
+				 <ul>
 					<li class="sub-depth2"><a href="/user/apt_contv.do?TMC=TMC001&LMC=LMC001" title="사이트 안내"><span>사이트 안내</span></a></li>
 					<li class="sub-depth2"><a href="/user/apt_qnal.do?TMC=TMC001&LMC=LMC002" title="Q&A"><span>Q&A</span></a></li>
 					<li class="sub-depth2"><a href="/user/apt_reqw.do?TMC=TMC001&LMC=LMC003" title="견적문의"><span>견적문의</span></a></li>
 					<li class="sub-depth2"><a href="/user/apt_notil.do?TMC=TMC001&LMC=LMC004" title="공지사항"><span>공지사항</span></a></li>
-				</ul>
-				<li class="hm-sub sub-depth1"><a href="#"><span>아파트 정보</span> <i class="ion-android-add" aria-hidden="true"></i></a>
+				</ul> -->
+				<%-- <li class="hm-sub sub-depth1"><a href="#"><span>아파트 정보</span> <i class="ion-android-add" aria-hidden="true"></i></a>
 				<ul>
 					<li class="sub-depth2"><a href="/user/apt_info1L.do?TMC=TMC002&LMC=LMC005" title="아파트정보"><span>아파트정보</span></a></li>
 				</ul>
@@ -310,18 +311,18 @@
 						<li class="sub-depth2"><a href="javascript:fnMobileClickTopMenu('LMC010');"><span>회비관리</span></a></li>
 						<li class="sub-depth2"><a href="javascript:fnMobileClickTopMenu('LMC017');"><span>문자발송</span></a></li>
 						<li class="sub-depth2"><a href="javascript:fnMobileClickTopMenu('LMC019');"><span>입금/발송이력</span></a></li>
-<%-- 						<c:if test="${INIT_DATA.SESSION_USER_TYPE  eq 'NG'}"> --%>
+						<c:if test="${INIT_DATA.SESSION_USER_TYPE  eq 'NG'}">
 <!-- 							<li class="sub-depth2"><a href="#"><span>네이버 회원</span></a></li> -->
-<%-- 						</c:if> --%>
-<%-- 						<c:if test="${INIT_DATA.SESSION_USER_TYPE  eq 'TG'}"> --%>
+						</c:if>
+						<c:if test="${INIT_DATA.SESSION_USER_TYPE  eq 'TG'}">
 <!-- 							<li class="sub-depth2"><a href="#"><span>네이버 회원</span></a></li> -->
 <!-- 							<li class="sub-depth2"><a href="#"><span>컨설팅 관리</span></a></li> -->
-<%-- 						</c:if> --%>
+						</c:if>
 					</ul>
 				</c:if>
 				<ul>
 					<li class="sub-depth2"><a href="javascript:fnLoginChk();" title="아파트 실거래이력"><span>입주자 검색</span></a></li>
-				</ul>
+				</ul> --%>
 				<li class="hm-sub sub-depth1"><a href="#"><span>실거래가 조회</span> <i class="ion-android-add" aria-hidden="true"></i></a>
 				<ul>
 					<li class="sub-depth2"><a href="/user/apt_TradingL.do?TMC=TMC004&LMC=LMC014" title="아파트 실거래이력"><span>아파트 실거래이력</span></a></li>
