@@ -304,7 +304,7 @@
 			<li id="right">
 				<!-- 타이틀/네비 -->
 				<div class="titleNaviNew">
-					<h3 class="subTitle">실거래가 비교</h3>
+					<h3 class="subTitle">분양권 비교</h3>
 				</div>
 				<!-- 타이틀/네비 끝 -->
 

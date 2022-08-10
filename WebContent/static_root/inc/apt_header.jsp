@@ -192,10 +192,11 @@
 </form>
 <div id="a_header">
 	<dl>
-		<dt><a href="/main.do"><img src="/static_root/images/common/apt_logo.jpg" alt="데이터서치" title="데이터서치" /></a></dt>
+		<dt><a href="/main.do"><img src="/static_root/images/common/dataSearch.jpg" alt="데이터서치" title="데이터서치" /></a></dt>
 		<dd>
 			<ul>
-				<c:if test="${not empty INIT_DATA.USER_TOP_MENU}">
+				<li><a href="/user/apt_TradingL.do?LMC=LMC014&TMC=TMC004" <c:if test="${sessionScope.TMC eq 'TMC004'}">class="on"</c:if> title="<c:out value='실거래가 조회'/>"><c:out value="실거래가 조회"/></a></li>
+				<%-- <c:if test="${not empty INIT_DATA.USER_TOP_MENU}">
 					<c:forEach var="item" items="${INIT_DATA.USER_TOP_MENU}">
 						<c:if test="${item.MENU_CODE eq 'TMC003'}">
 							<li><a href="javascript:fnClickTopMenu('${item.MENU_CODE}');" <c:if test="${sessionScope.TMC eq item.MENU_CODE}">class="on"</c:if> title="<c:out value='${item.MENUNM}'/>"><c:out value="${item.MENUNM}"/></a></li>
@@ -211,13 +212,13 @@
 							<li><a href="${item.MENU_URL}?LMC=${left_code}&TMC=${item.MENU_CODE}" <c:if test="${sessionScope.TMC eq item.MENU_CODE}">class="on"</c:if> title="<c:out value='${item.MENUNM}'/>"><c:out value="${item.MENUNM}"/></a></li>
 						</c:if>
 					</c:forEach>
-				</c:if>
+				</c:if> --%>
 			</ul>
 		</dd>
 		<dt style="padding-top:2%;">
 			<c:if test="${empty INIT_DATA.SESSION_USER_ID}">
 				<div>
-					<span><a href="javascript:openLogin('P');">로그인</a>	</span>
+<!-- 					<span><a href="javascript:openLogin('P');">로그인</a>	</span> -->
 				</div>
 			</c:if>
 			<c:if test="${not empty INIT_DATA.SESSION_USER_ID }">
@@ -251,7 +252,7 @@
 <div id="header-mobile">
 	<ul class="hm-top">
 		<li>
-			<h1><a href="javascript:fnMain();"><img src="/static_root/images/common/apt_logo.jpg" height="32" alt="데이터서치" title="데이터서치" /></a></h1>
+			<h1><a href="javascript:fnMain();"><img src="/static_root/images/common/dataSearch.jpg" height="32" alt="데이터서치" title="데이터서치" /></a></h1>
 		</li>
 		<li><i class="ion-android-menu" aria-hidden="true" id="mobileLnbOpen"></i></li>
 	</ul>
@@ -260,13 +261,13 @@
 	
 		<div class="hm-total">
 		<ul class="total-tit">
-			<li><img src="/static_root/images/common/apt_logo.jpg" height="30" alt="데이터서치" title="데이터서치" /></li>
+			<li><img src="/static_root/images/common/dataSearch.jpg" height="30" alt="데이터서치" title="데이터서치" /></li>
 			<li><i id="mobileLnbClose" class="ion-close" aria-hidden="true"></i></li>
 		</ul>
 		<ul class="total-btn">
 			<li>
 				<c:if test="${INIT_DATA.SESSION_USER_ID eq ''}">
-					<li><a href="javascript:openLogin('M');" id="mobileLogin" style="width:200%;">로그인</a></li>
+<!-- 					<li><a href="javascript:openLogin('M');" id="mobileLogin" style="width:200%;">로그인</a></li> -->
 				</c:if>
 				<c:if test="${INIT_DATA.SESSION_USER_ID ne ''}">
 					<c:if test="${INIT_DATA.SESSION_USER_TYPE ne 'K' and INIT_DATA.SESSION_USER_TYPE ne 'N' and INIT_DATA.SESSION_USER_TYPE ne 'SMC'}">

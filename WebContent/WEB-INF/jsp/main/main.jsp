@@ -77,11 +77,11 @@
 		
 		<!-- 메인 콘텐츠영역 -->
 		<div id="main_wrap">
-			<div class="mn_visual">
-				<div class="mn_slogan">
-					<h2>우리집 만들기의 첫걸음</h2>
-				</div>
-			</div>
+<!-- 			<div class="mn_visual"> -->
+<!-- 				<div class="mn_slogan"> -->
+<!-- 					<h2>우리집 만들기의 첫걸음</h2> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
 			
 			<div class="mn_cont" id="cont">
 				<div class="mn_cont_btm">
