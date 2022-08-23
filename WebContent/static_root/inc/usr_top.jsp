@@ -46,6 +46,7 @@ response.setHeader("Cache-Control", "no-cache");
 <script type="text/javascript" src="<c:out value='${COMMON_JS_CONF}' />/json2.js"></script> <!--  공통  js  -->
 
 </head>
+
 <%
 //치환 변수 선언
 pageContext.setAttribute("cn", "\n"); //Enter
@@ -62,3 +63,15 @@ $(document).ready(function () {
 
 
 </script>
+<body>
+<!-- 네이버 애널리스트 분석 -->
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "12ad00926f6bde0";
+if(window.wcs) {
+wcs_do();
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4577150400116930" crossorigin="anonymous"></script>
+</body>
