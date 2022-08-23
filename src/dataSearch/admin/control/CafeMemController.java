@@ -20,11 +20,11 @@ import dataSearch.framework.util.Utils;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.poi.util.SystemOutLogger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -49,10 +49,10 @@ public class CafeMemController extends LincActionController {
 	private PlatformTransactionManager transactionManager;
 	Log log = LogFactory.getLog(this.getClass());
 	
-	public static final String WEB_DRIVER_ID = "webdriver.chrome.driver"; //드라이버 ID
-  	public static final String WEB_DRIVER_PATH = "D:\\chromedriver.exe"; //드라이버 경로
-  	private static WebDriver driver;
-  	private static WebElement element;
+//	public static final String WEB_DRIVER_ID = "webdriver.chrome.driver"; //드라이버 ID
+//  	public static final String WEB_DRIVER_PATH = "D:\\chromedriver.exe"; //드라이버 경로
+//  	private static WebDriver driver;
+//  	private static WebElement element;
 
 	@Autowired
 	public void setTransactionManager(PlatformTransactionManager transactionManager) {
@@ -113,13 +113,13 @@ public class CafeMemController extends LincActionController {
 		String modelName = "";
 		
 		try {
-			getNaverCafeMem();
+//			getNaverCafeMem();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 		return new ModelAndView("jsonView", dataMap);
 	}
-	
+	/*
 	public static void getNaverCafeMem() {
 		try {
 				driver = new ChromeDriver();
@@ -184,6 +184,6 @@ public class CafeMemController extends LincActionController {
 	        } finally {
 	            driver.close();
 	        }
-	}
+	}*/
 
 }
