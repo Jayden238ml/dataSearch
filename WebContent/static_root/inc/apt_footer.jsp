@@ -42,6 +42,8 @@
 </style>
 <div class="site_slide">
 	<ul id="srolling" style="height:62px;">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4577150400116930"
+     crossorigin="anonymous"></script>
 	<!-- 구글광고 노출부분 -->
 		<!-- <li><a href="https://www.raemian.co.kr/main.do" target="_blank" title="새창으로 열기"><img src="/static_root/images/common/f_slide1.png" alt="삼성물산" /></a></li>
 		<li><a href="https://www.hdec.kr/" target="_blank" title="새창으로 열기"><img src="/static_root/images/common/f_slide2.png" alt="현대건설" /></a></li>

@@ -56,5 +56,7 @@ function fnLeftMenuMove(lmc){
 		</c:if> --%>
 		<div class="google_adv">
 <!-- 			구글광고 부분 -->
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4577150400116930"
+     crossorigin="anonymous"></script>
 		</div>
 	</div>
