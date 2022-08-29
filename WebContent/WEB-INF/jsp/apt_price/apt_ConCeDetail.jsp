@@ -121,7 +121,7 @@
 	
 	function fnList(){
 // 		var url = $('#RTN_URL').val();
-		$('#frm').attr("action", "/user/apt_ConceL.do?L_TMC=TMC004&L_LMC=LMC013");
+		$('#frm').attr("action", "/user/apt_ConceL.do");
 		$('#frm').submit();
 	}
 	
@@ -147,8 +147,8 @@
 				<!-- 타이틀/네비 끝 -->
 				<div id="cont">
 					<form name="frm" id="frm" method="post" action="#">
-						<input type="hidden" name="TMC" id="TMC" value="${INIT_DATA.TMC}" />
-						<input type="hidden" name="LMC" id="LMC" value="${INIT_DATA.LMC}" />
+						<input type="hidden" name="TMC" id="TMC" value="${INIT_DATA.L_TMC}" />
+						<input type="hidden" name="LMC" id="LMC" value="${INIT_DATA.L_LMC}" />
 						<input type="hidden" name="RTN_URL" id="RTN_URL" value="${INIT_DATA.RTN_URL}" />
 						<input type="hidden" name="CURR_PAGE" id="CURR_PAGE" value="${INIT_DATA.CURR_PAGE}" />
 						<input type="hidden" name="SCH_TOP_LAWD_CD" id="SCH_TOP_LAWD_CD" value="${INIT_DATA.SCH_TOP_LAWD_CD}" />
