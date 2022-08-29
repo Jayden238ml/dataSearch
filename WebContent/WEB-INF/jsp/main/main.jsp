@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="title" content="공공데이터 조회" />
+	<meta name="title" content="공공데이터 검색" />
 	<meta name="description" content="아파트,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
 	<meta name="keywords" content="아파트,시세조회,분양가조회, 실거래가 비교, 분양가 비교" />
 	<meta name="robots" content="index, follow">
@@ -16,7 +16,7 @@
 	<meta property="og:url" content="http://www.datasearch.co.kr">
 	<meta property="og:title" content="아파트정보 | 실거래가 조회 | 거래가 비교">
 	<meta property="og:image" content="/static_root/images/common/meta_img.jpg">
-	<meta property="og:description" content="아파트관리 " />
+	<meta property="og:description" content="데이터 검색 " />
 
 	<title>아파트관리</title>
 	<%@ include file="/static_root/inc/usr_top.jsp" %>

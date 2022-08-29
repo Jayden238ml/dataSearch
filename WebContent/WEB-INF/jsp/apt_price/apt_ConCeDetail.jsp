@@ -15,7 +15,7 @@
 	<meta property="og:url" content="http://www.datasearch.co.kr">
 	<meta property="og:title" content="아파트정보 | 실거래가 조회 | 거래가 비교">
 	<meta property="og:image" content="/static_root/images/common/meta_img.jpg">
-	<meta property="og:description" content="아파트관리 " />
+	<meta property="og:description" content="데이터 검색 " />
 	<title>아파트정보 | 아파트 분양권 거래이력</title>
 <link rel='stylesheet' href='/static_root/tuiChart/tui-chart.css' type='text/css'>
 <script type="text/javascript" src="/static_root/tuiChart/tui-chart-all.js" ></script>	
@@ -201,7 +201,7 @@
 						<div class="videoWrap mt20" style="color:#000000">
 							 <c:if test="${INIT_DATA.X_LOCATION ne '' and INIT_DATA.Y_LOCATION ne ''}">
 								<div id="map" style="width:100%;height:400px;"></div>
-								<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e5c7d9bd5172ded7a64bab139c62c331"></script>
+								<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc53eeb9b937c93d1a98ea0d13a736d8"></script>
 								<script type="text/javascript">
 									var container = document.getElementById('map'); 
 									var options = { 
