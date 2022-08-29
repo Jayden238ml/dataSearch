@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
@@ -291,6 +292,10 @@ public class DataApiController extends LincActionController{
 		
 		try {
 			
+			String apartment_name = request.getParameter("APARTMENT_NAME");
+			apartment_name = URLDecoder.decode(apartment_name, "UTF-8");
+			dataMap.put("APARTMENT_NAME", apartment_name);
+			
 			dataMap.put("procedureid", "Api.getAptDeal_List");
 			List resultList = commonFacade.list(dataMap);
 			dataMap.put("resultList", resultList);
@@ -342,6 +347,10 @@ public class DataApiController extends LincActionController{
 		String modelName = "/apt_price/apt_ConCeDetail";
 		
 		try {
+			
+			String apartment_name = request.getParameter("APARTMENT_NAME");
+			apartment_name = URLDecoder.decode(apartment_name, "UTF-8");
+			dataMap.put("APARTMENT_NAME", apartment_name);
 			
 			dataMap.put("procedureid", "Api.getAptParcelOut_List");
 			List resultList = commonFacade.list(dataMap);

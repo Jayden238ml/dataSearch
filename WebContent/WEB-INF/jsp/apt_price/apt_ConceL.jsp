@@ -78,7 +78,9 @@
 		$('#JIBUN').val(jibun);
 		$('#AREA_EXCLUSIVE_USE').val(area);
 		
-		$('#frm').attr("action", "/api/aptParcOutDetail.do");
+		var param = "?L_TMC=TMC004&L_LMC=LMC013&JIBUN=" + jibun + "&REGIONAL_CODE=" + code + "&AREA_EXCLUSIVE_USE=" + area + "&APARTMENT_NAME=" + escape(encodeURIComponent(apt_nm));
+		
+		$('#frm').attr("action", "/api/aptParcOutDetail.do" + param);
 		$('#frm').submit();
 	}
 	

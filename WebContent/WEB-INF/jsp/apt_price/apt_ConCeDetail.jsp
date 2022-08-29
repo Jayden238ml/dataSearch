@@ -120,8 +120,8 @@
 	}
 	
 	function fnList(){
-		var url = $('#RTN_URL').val();
-		$('#frm').attr("action", url);
+// 		var url = $('#RTN_URL').val();
+		$('#frm').attr("action", "/user/apt_ConceL.do?L_TMC=TMC004&L_LMC=LMC013");
 		$('#frm').submit();
 	}
 	

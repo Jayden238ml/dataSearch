@@ -75,8 +75,8 @@
 		$("#ROAD_NAME_BONBUN").val(bonbun);
 		$("#AREA_EXCLUSIVE_USE").val(area);
 		$("#APARTMENT_NAME").val(apt_nm);
-		
-		$('#frm').attr("action", "/api/aptDealDetail.do");
+		var param = "?L_TMC=TMC004&L_LMC=LMC014&ROAD_NAME_BONBUN=" + bonbun + "&AREA_EXCLUSIVE_USE=" + area + "&APARTMENT_NAME=" + escape(encodeURIComponent(apt_nm));
+		$('#frm').attr("action", "/api/aptDealDetail.do" + param);
 		$('#frm').submit();
 	}
 	
