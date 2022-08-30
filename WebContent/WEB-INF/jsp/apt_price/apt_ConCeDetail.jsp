@@ -125,6 +125,18 @@
 		$('#frm').submit();
 	}
 	
+	function fnGetNewArea(){
+		$('#AREA_EXCLUSIVE_USE').val($('#DTL_AREA_EXCLUSIVE_USE').val());
+		var jibun = $('#JIBUN').val();
+		var code = $('#REGIONAL_CODE').val();
+		var apt_nm = $('#APARTMENT_NAME').val();
+		var area = $('#DTL_AREA_EXCLUSIVE_USE').val();
+		var param = "?L_TMC=TMC004&L_LMC=LMC013&JIBUN=" + jibun + "&REGIONAL_CODE=" + code + "&AREA_EXCLUSIVE_USE=" + area + "&APARTMENT_NAME=" + escape(encodeURIComponent(apt_nm));
+		
+		$('#frm').attr("action", "/api/aptParcOutDetail.do" + param);
+		$('#frm').submit();
+	}
+	
 </script>
 </head>
 <body id="user">
@@ -155,9 +167,20 @@
 						<input type="hidden" name="SCH_LAWD_CD" id="SCH_LAWD_CD" value="${INIT_DATA.SCH_LAWD_CD}" />
 						<input type="hidden" name="SCH_APARTMENT_NAME" id="SCH_APARTMENT_NAME" value="${INIT_DATA.SCH_APARTMENT_NAME}" />
 						<input type="hidden" name="SCH_AREA_EXCLUSIVE_USE" id="SCH_AREA_EXCLUSIVE_USE" value="${INIT_DATA.SCH_AREA_EXCLUSIVE_USE}" />
+						<input type="hidden" name="APARTMENT_NAME" id="APARTMENT_NAME" value="${INIT_DATA.APARTMENT_NAME}" />
+						<input type="hidden" name="REGIONAL_CODE" id="REGIONAL_CODE" value="${INIT_DATA.REGIONAL_CODE}" />
+						<input type="hidden" name="JIBUN" id="JIBUN" value="${INIT_DATA.JIBUN}" />
+						<input type="hidden" name="AREA_EXCLUSIVE_USE" id="AREA_EXCLUSIVE_USE" value="${INIT_DATA.AREA_EXCLUSIVE_USE}" />
 					</form>
 					<section class="sect_area sect_first_area">
-						<h3 class="title1 mt10"><c:out value="${INIT_DATA.APARTMENT_NAME}"/> (<c:out value="${INIT_DATA.AREA_EXCLUSIVE_USE}"/>) </h3>
+<%-- 						<h3 class="title1 mt10"><c:out value="${INIT_DATA.APARTMENT_NAME}"/> (<c:out value="${INIT_DATA.AREA_EXCLUSIVE_USE}"/>) </h3> --%>
+						<h3 class="title1 mt10"><c:out value="${INIT_DATA.APARTMENT_NAME}"/> 
+							<select name="DTL_AREA_EXCLUSIVE_USE" id="DTL_AREA_EXCLUSIVE_USE" title="전용면적" class="select" onchange="fnGetNewArea();" style="width:20%; box-sizing:border-box; border: 1px solid #e5e5e5;">
+								<c:forEach var="item" items="${INIT_DATA.areaList }" >
+									<option value="${item.AREA_EXCLUSIVE_USE}" <c:if test="${item.AREA_EXCLUSIVE_USE eq INIT_DATA.AREA_EXCLUSIVE_USE}">selected="selected"</c:if> >${item.AREA_EXCLUSIVE_USE}</option>
+								</c:forEach>
+							</select>
+						</h3>
 						<div class="viewArea mt20">
 							<div class="videoWrap" style="color:#000000">
 								 <div id="chart-area"></div>
@@ -198,7 +221,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="videoWrap mt20" style="color:#000000">
+						<%-- <div class="videoWrap mt20" style="color:#000000">
 							 <c:if test="${INIT_DATA.X_LOCATION ne '' and INIT_DATA.Y_LOCATION ne ''}">
 								<div id="map" style="width:100%;height:400px;"></div>
 								<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc53eeb9b937c93d1a98ea0d13a736d8"></script>
@@ -211,7 +234,7 @@
 									var map = new kakao.maps.Map(container, options); 
 								</script>
 							</c:if>
-						</div>
+						</div> --%>
 						<div class="core_btn">
 							<a href="javascript:fnList();" class="mt30" style="background-color:#ff9900;">목록</a>
 						</div>

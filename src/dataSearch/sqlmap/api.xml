@@ -353,6 +353,16 @@
 		ORDER BY A.DEAL_YEAR DESC, CAST(A.DEAL_MONTH AS UNSIGNED) DESC, CAST(A.DEAL_DAY AS UNSIGNED)DESC
 	</select>
 	
+	<select id="getAptDealArea_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
+		SELECT 
+			ROUND(AREA_EXCLUSIVE_USE, 2) AS AREA_EXCLUSIVE_USE
+		FROM DEAL_APT_INFO
+		WHERE APARTMENT_NAME = #{APARTMENT_NAME}
+		AND ROAD_NAME_BONBUN = #{ROAD_NAME_BONBUN}
+		GROUP BY AREA_EXCLUSIVE_USE
+		ORDER BY AREA_EXCLUSIVE_USE
+	</select>
+	
 	
 	<select id="getAptDeal_ChartList" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
@@ -393,6 +403,20 @@
 		AND A.JIBUN = #{JIBUN}
 		AND A.REGIONAL_CODE = #{REGIONAL_CODE}
 		ORDER BY A.DEAL_YEAR DESC, CAST(A.DEAL_MONTH AS UNSIGNED) DESC, CAST(A.DEAL_DAY AS UNSIGNED)DESC
+	</select>
+	
+	<select id="getAptParcelOutArea_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
+		SELECT
+		 	A.AREA_EXCLUSIVE_USE
+		FROM (
+		SELECT TRUNCATE(AREA_EXCLUSIVE_USE,2) AS AREA_EXCLUSIVE_USE 
+		FROM PARCEL_OUT_INFO
+		WHERE APARTMENT_NAME = #{APARTMENT_NAME}
+		AND JIBUN = #{JIBUN}
+		GROUP BY AREA_EXCLUSIVE_USE
+		ORDER by AREA_EXCLUSIVE_USE
+		)A
+		GROUP BY AREA_EXCLUSIVE_USE
 	</select>
 	
 	

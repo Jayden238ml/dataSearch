@@ -325,6 +325,10 @@ public class DataApiController extends LincActionController{
 			List chartList = commonFacade.list(dataMap);
 			dataMap.put("chartList", chartList);
 			
+			dataMap.put("procedureid", "Api.getAptDealArea_List");
+			List areaList = commonFacade.list(dataMap);
+			dataMap.put("areaList", areaList);
+			
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -385,6 +389,10 @@ public class DataApiController extends LincActionController{
 			dataMap.put("procedureid", "Api.getAptParcelOut_ChartList");
 			List chartList = commonFacade.list(dataMap);
 			dataMap.put("chartList", chartList);
+			
+			dataMap.put("procedureid", "Api.getAptParcelOutArea_List");
+			List areaList = commonFacade.list(dataMap);
+			dataMap.put("areaList", areaList);
 			
 		} catch (Exception ex) {
 			ex.printStackTrace();
