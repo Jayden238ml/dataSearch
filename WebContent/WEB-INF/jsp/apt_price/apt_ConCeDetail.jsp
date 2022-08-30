@@ -177,7 +177,7 @@
 						<h3 class="title1 mt10"><c:out value="${INIT_DATA.APARTMENT_NAME}"/> 
 							<select name="DTL_AREA_EXCLUSIVE_USE" id="DTL_AREA_EXCLUSIVE_USE" title="전용면적" class="select" onchange="fnGetNewArea();" style="width:20%; box-sizing:border-box; border: 1px solid #e5e5e5;">
 								<c:forEach var="item" items="${INIT_DATA.areaList }" >
-									<option value="${item.AREA_EXCLUSIVE_USE}" <c:if test="${item.AREA_EXCLUSIVE_USE eq INIT_DATA.AREA_EXCLUSIVE_USE}">selected="selected"</c:if> >${item.AREA_EXCLUSIVE_USE}</option>
+									<option value="${item.AREA_EXCLUSIVE_USE}" <c:if test="${item.AREA_EXCLUSIVE_USE eq INIT_DATA.AREA_EXCLUSIVE_USE}">selected="selected"</c:if> >${item.AREA_EXCLUSIVE_USE} ㎡</option>
 								</c:forEach>
 							</select>
 						</h3>
