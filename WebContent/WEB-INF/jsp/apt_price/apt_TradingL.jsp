@@ -153,7 +153,7 @@
 						<dl class="titleEaB">
 							<dt>
 								<c:if test="${INIT_DATA.DEFAULT eq 'Y'}">
-									검색조건 입력 후 검색해 주세요.&nbsp;&nbsp; (상세보기 시 클릭)
+									검색조건 입력 후 검색해 주세요.&nbsp;&nbsp;
 								</c:if>
 								<c:if test="${INIT_DATA.DEFAULT ne 'Y'}">
 									총 <strong><fmt:formatNumber value="${INIT_DATA.TOTAL_CNT}" pattern="#,###"/></strong>&nbsp;건

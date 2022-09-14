@@ -131,7 +131,7 @@ public class DataApiController extends LincActionController{
 			}
 			
 			if("Y".equals(dataMap.getString("DEFAULT"))) {
-				dataMap.put("TOTAL_CNT", "10");
+				dataMap.put("TOTAL_CNT", "200");
 			}else {
 				dataMap.put("procedureid", "Api.getParcelOutInfo_CNT");
 			    DataMap cntMap = this.commonFacade.getObject(dataMap);
@@ -174,7 +174,7 @@ public class DataApiController extends LincActionController{
 			}
 			
 			if("Y".equals(dataMap.getString("DEFAULT"))) {
-				dataMap.put("TOTAL_CNT", "10");
+				dataMap.put("TOTAL_CNT", "200");
 			}else {
 				dataMap.put("procedureid", "Api.getDealAptInfo_CNT");
 			    DataMap cntMap = this.commonFacade.getObject(dataMap);

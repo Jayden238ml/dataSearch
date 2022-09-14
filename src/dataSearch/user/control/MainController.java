@@ -85,9 +85,9 @@ public class MainController extends LincActionController
 		try
 		{
 			// 공지사항 가져오기
-			dataMap.put("procedureid", "Board.getMain_List");
-			List MainBdList = commonFacade.list(dataMap);	
-			dataMap.put("MainBdList", MainBdList);
+//			dataMap.put("procedureid", "Board.getMain_List");
+//			List MainBdList = commonFacade.list(dataMap);	
+//			dataMap.put("MainBdList", MainBdList);
 			
 		}
 		catch (Exception ex) {

@@ -71,7 +71,7 @@
 					</if>
 					ORDER BY A.DEAL_YEAR DESC, CAST(A.DEAL_MONTH AS UNSIGNED) DESC, CAST(A.DEAL_DAY AS UNSIGNED)DESC
 					<if test="DEFAULT == 'Y'.toString()">
-						LIMIT 10
+						LIMIT 200
 					</if>
 				)T,(SELECT @RNUM := 0 ) STR	
 			)TB
@@ -166,7 +166,7 @@
 					GROUP BY A.ROAD_NAME_BONBUN, A.AREA_EXCLUSIVE_USE
 					ORDER BY A.DEAL_YEAR DESC, CAST(A.DEAL_MONTH AS UNSIGNED) DESC, CAST(A.DEAL_DAY AS UNSIGNED)DESC
 					<if test="DEFAULT == 'Y'.toString()">
-						LIMIT 10
+						LIMIT 200
 					</if>
 				)T,(SELECT @RNUM := 0 ) STR	
 			)TB
