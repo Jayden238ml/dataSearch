@@ -20,7 +20,7 @@ response.setHeader("Cache-Control", "no-cache");
 <meta property="og:url" content="http://www.datasearch.co.kr">
 <meta property="og:title" content="아파트정보 | 실거래가 조회 | 거래가 비교">
 <meta property="og:image" content="/static_root/images/common/meta_img.jpg">
-<meta property="og:description" content="아파트관리 " />
+<meta property="og:description" content="데이터 검색 " />
 <title>데이터서치</title>
 <%@ include file="apt_common.jsp" %>
 <link rel="shortcut icon" href="/static_root/images/common/favicon.ico">

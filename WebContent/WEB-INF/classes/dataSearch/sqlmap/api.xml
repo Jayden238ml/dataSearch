@@ -71,7 +71,7 @@
 					</if>
 					ORDER BY A.DEAL_YEAR DESC, CAST(A.DEAL_MONTH AS UNSIGNED) DESC, CAST(A.DEAL_DAY AS UNSIGNED)DESC
 					<if test="DEFAULT == 'Y'.toString()">
-						LIMIT 10
+						LIMIT 200
 					</if>
 				)T,(SELECT @RNUM := 0 ) STR	
 			)TB
@@ -166,7 +166,7 @@
 					GROUP BY A.ROAD_NAME_BONBUN, A.AREA_EXCLUSIVE_USE
 					ORDER BY A.DEAL_YEAR DESC, CAST(A.DEAL_MONTH AS UNSIGNED) DESC, CAST(A.DEAL_DAY AS UNSIGNED)DESC
 					<if test="DEFAULT == 'Y'.toString()">
-						LIMIT 10
+						LIMIT 200
 					</if>
 				)T,(SELECT @RNUM := 0 ) STR	
 			)TB
@@ -353,6 +353,16 @@
 		ORDER BY A.DEAL_YEAR DESC, CAST(A.DEAL_MONTH AS UNSIGNED) DESC, CAST(A.DEAL_DAY AS UNSIGNED)DESC
 	</select>
 	
+	<select id="getAptDealArea_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
+		SELECT 
+			ROUND(AREA_EXCLUSIVE_USE, 2) AS AREA_EXCLUSIVE_USE
+		FROM DEAL_APT_INFO
+		WHERE APARTMENT_NAME = #{APARTMENT_NAME}
+		AND ROAD_NAME_BONBUN = #{ROAD_NAME_BONBUN}
+		GROUP BY AREA_EXCLUSIVE_USE
+		ORDER BY AREA_EXCLUSIVE_USE
+	</select>
+	
 	
 	<select id="getAptDeal_ChartList" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
@@ -367,7 +377,7 @@
 			AND A.ROAD_NAME_BONBUN = #{ROAD_NAME_BONBUN}
 			AND A.AREA_EXCLUSIVE_USE = #{AREA_EXCLUSIVE_USE}
 			GROUP BY A.DEAL_YEAR , A.DEAL_MONTH ,A.DEAL_AMOUNT
-			ORDER BY A.DEAL_YEAR , CAST(A.DEAL_MONTH AS UNSIGNED) , CAST(A.DEAL_DAY AS UNSIGNED)
+			ORDER BY A.DEAL_YEAR DESC, CAST(A.DEAL_MONTH AS UNSIGNED) DESC, CAST(A.DEAL_DAY AS UNSIGNED) DESC
 			LIMIT 13
 		)T
 		ORDER BY DEAL_YEAR, DEAL_MONTH
@@ -395,6 +405,20 @@
 		ORDER BY A.DEAL_YEAR DESC, CAST(A.DEAL_MONTH AS UNSIGNED) DESC, CAST(A.DEAL_DAY AS UNSIGNED)DESC
 	</select>
 	
+	<select id="getAptParcelOutArea_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
+		SELECT
+		 	A.AREA_EXCLUSIVE_USE
+		FROM (
+		SELECT TRUNCATE(AREA_EXCLUSIVE_USE,2) AS AREA_EXCLUSIVE_USE 
+		FROM PARCEL_OUT_INFO
+		WHERE APARTMENT_NAME = #{APARTMENT_NAME}
+		AND JIBUN = #{JIBUN}
+		GROUP BY AREA_EXCLUSIVE_USE
+		ORDER by AREA_EXCLUSIVE_USE
+		)A
+		GROUP BY AREA_EXCLUSIVE_USE
+	</select>
+	
 	
 	<select id="getAptParcelOut_ChartList" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
 		SELECT
@@ -410,7 +434,7 @@
 			AND A.JIBUN = #{JIBUN}
 			AND A.REGIONAL_CODE = #{REGIONAL_CODE}
 			GROUP BY A.DEAL_YEAR , A.DEAL_MONTH ,A.DEAL_AMOUNT
-			ORDER BY A.DEAL_YEAR , CAST(A.DEAL_MONTH AS UNSIGNED) , CAST(A.DEAL_DAY AS UNSIGNED)
+			ORDER BY A.DEAL_YEAR DESC , CAST(A.DEAL_MONTH AS UNSIGNED) DESC, CAST(A.DEAL_DAY AS UNSIGNED) DESC
 			LIMIT 13
 		)T
 		ORDER BY DEAL_YEAR, DEAL_MONTH
@@ -515,5 +539,199 @@
 		GROUP BY APARTMENT_NAME , SIGUNGU , DONG, JIBUN, AREA_EXCLUSIVE_USE, REGIONAL_CODE
 		ORDER BY AREA_EXCLUSIVE_USE DESC
 	</select>
+	
+	<insert id="CampingData_Insert">
+		INSERT INTO CAMPING_INFO(
+		      EXPRNPROGRM		
+		    , EXTSHRCO		
+		    , FRPRVTWRPPCO		
+		    , FRPRVTSANDCO		
+		    , FIRESENSORCO		
+		    , THEMAENVRNCL		
+		    , EQPMNLENDCL		
+		    , ANIMALCMGCL		
+		    , TOURERACL		
+		    , FIRSTIMAGEURL		
+		    , CREATEDTIME		
+		    , MODIFIEDTIME		
+		    , CONTENTID 		
+		    , FACLTNM			
+		    , LINEINTRO		
+		    , INTRO			
+		    , ALLAR			
+		    , INSRNCAT		
+		    , TRSAGNTNO		
+		    , BIZRNO			
+		    , FACLTDIVNM		
+		    , MANGEDIVNM		
+		    , MGCDIV			
+		    , MANAGESTTUS		
+		    , HVOFBGNDE		
+		    , HVOFENDDLE		
+		    , FEATURENM		
+		    , INDUTY			
+		    , LCTCL			
+		    , DONM			
+		    , SIGUNGUNM		
+		    , ZIPCODE			
+		    , ADDR1			
+		    , ADDR2			
+		    , MAPX			
+		    , MAPY			
+		    , DIRECTION		
+		    , TEL			
+		    , HOMEPAGE		
+		    , RESVEURL		
+		    , RESVECL			
+		    , MANAGENMPR		
+		    , GNRLSITECO		
+		    , AUTOSITECO		
+		    , GLAMPSITECO		
+		    , CARAVSITECO		
+		    , INDVDLCARAVSITECO	
+		    , SITEDSTNC		
+		    , SITEMG1WIDTH		
+		    , SITEMG2WIDTH		
+		    , SITEMG3WIDTH		
+		    , SITEMG1VRTICL		
+		    , SITEMG2VRTICL		
+		    , SITEMG3VRTICL		
+		    , SITEMG1CO		
+		    , SITEMG2CO		
+		    , SITEMG3CO		
+		    , SITEBOTTOMCL1		
+		    , SITEBOTTOMCL2		
+		    , SITEBOTTOMCL3		
+		    , SITEBOTTOMCL4		
+		    , SITEBOTTOMCL5		
+		    , TOOLTIP			
+		    , GLAMPINNERFCLTY		
+		    , CARAVINNERFCLTY		
+		    , PRMISNDE		
+		    , OPERPDCL		
+		    , OPERDECL		
+		    , TRLERACMPNYAT		
+		    , CARAVACMPNYAT		
+		    , TOILETCO		
+		    , SWRMCO			
+		    , WTRPLCO			
+		    , BRAZIERCL		
+		    , SBRSCL			
+		    , SBRSETC			
+		    , POSBLFCLTYCL		
+		    , POSBLFCLTYETC		
+		    , CLTUREVENTAT		
+		    , CLTUREVENT		
+		    , EXPRNPROGRMAT		
+		)VALUES(
+			  #{EXPRNPROGRM}		
+		    , #{EXTSHRCO}		
+		    , #{FRPRVTWRPPCO}		
+		    , #{FRPRVTSANDCO}		
+		    , #{FIRESENSORCO}		
+		    , #{THEMAENVRNCL}		
+		    , #{EQPMNLENDCL}		
+		    , #{ANIMALCMGCL}		
+		    , #{TOURERACL}		
+		    , #{FIRSTIMAGEURL}		
+		    , #{CREATEDTIME}		
+		    , #{MODIFIEDTIME}		
+		    , #{CONTENTID} 		
+		    , #{FACLTNM}			
+		    , #{LINEINTRO}		
+		    , #{INTRO}			
+		    , #{ALLAR}			
+		    , #{INSRNCAT}		
+		    , #{TRSAGNTNO}		
+		    , #{BIZRNO}			
+		    , #{FACLTDIVNM}		
+		    , #{MANGEDIVNM}		
+		    , #{MGCDIV}			
+		    , #{MANAGESTTUS}		
+		    , #{HVOFBGNDE}		
+		    , #{HVOFENDDLE}		
+		    , #{FEATURENM}		
+		    , #{INDUTY}			
+		    , #{LCTCL}			
+		    , #{DONM}			
+		    , #{SIGUNGUNM}		
+		    , #{ZIPCODE}			
+		    , #{ADDR1}			
+		    , #{ADDR2}			
+		    , #{MAPX}			
+		    , #{MAPY}			
+		    , #{DIRECTION}		
+		    , #{TEL}			
+		    , #{HOMEPAGE}		
+		    , #{RESVEURL}		
+		    , #{RESVECL}			
+		    , #{MANAGENMPR}		
+		    , #{GNRLSITECO}		
+		    , #{AUTOSITECO}		
+		    , #{GLAMPSITECO}		
+		    , #{CARAVSITECO}		
+		    , #{INDVDLCARAVSITECO}	
+		    , #{SITEDSTNC}		
+		    , #{SITEMG1WIDTH}		
+		    , #{SITEMG2WIDTH}		
+		    , #{SITEMG3WIDTH}		
+		    , #{SITEMG1VRTICL}		
+		    , #{SITEMG2VRTICL}		
+		    , #{SITEMG3VRTICL}		
+		    , #{SITEMG1CO}		
+		    , #{SITEMG2CO}		
+		    , #{SITEMG3CO}		
+		    , #{SITEBOTTOMCL1}		
+		    , #{SITEBOTTOMCL2}		
+		    , #{SITEBOTTOMCL3}		
+		    , #{SITEBOTTOMCL4}		
+		    , #{SITEBOTTOMCL5}		
+		    , #{TOOLTIP}			
+		    , #{GLAMPINNERFCLTY}		
+		    , #{CARAVINNERFCLTY}		
+		    , #{PRMISNDE}		
+		    , #{OPERPDCL}		
+		    , #{OPERDECL}		
+		    , #{TRLERACMPNYAT}		
+		    , #{CARAVACMPNYAT}		
+		    , #{TOILETCO}		
+		    , #{SWRMCO}			
+		    , #{WTRPLCO}			
+		    , #{BRAZIERCL}		
+		    , #{SBRSCL}			
+		    , #{SBRSETC}			
+		    , #{POSBLFCLTYCL}		
+		    , #{POSBLFCLTYETC}		
+		    , #{CLTUREVENTAT}		
+		    , #{CLTUREVENT}		
+		    , #{EXPRNPROGRMAT}
+		)
+	</insert>
+	
+	
+	<delete id="CampingData_Delete">
+		DELETE FROM CAMPING_INFO
+	</delete>
+	
+	
+	<delete id="CampingImgData_Delete">
+		DELETE FROM CAMPING_IMG_INFO
+	</delete>
+	
+	<insert id="CampingImgData_Insert">
+		INSERT INTO CAMPING_IMG_INFO(
+			  CONTENTID
+			, SERIALNUM
+			, IMAGEURL
+			, CREATEDTIME
+			, MODIFIEDTIME
+		)VALUES(
+			  #{CONTENTID}
+			, #{SERIALNUM}
+			, #{IMAGEURL}
+			, #{CREATEDTIME}
+			, #{MODIFIEDTIME}
+		)
+	</insert>
 		
 </mapper>

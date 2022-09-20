@@ -15,7 +15,7 @@
 	<meta property="og:title" content="아파트정보 | 실거래가 조회 | 거래가 비교">
 	<meta property="og:image" content="/static_root/images/common/meta_img.jpg">
 	<meta property="og:description" content="데이터 검색 " />
-<title>아파트관리 | 아파트분양권 거래이역</title>
+<title>아파트관리 | 아파트분양권 거래이력</title>
 <%@ include file="/static_root/inc/usr_top.jsp" %>
 <script type="text/javascript">
 	var PAGE_SIZE = "${INIT_DATA.PAGE_SIZE}"; 

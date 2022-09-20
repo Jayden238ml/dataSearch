@@ -196,6 +196,7 @@
 		<dd>
 			<ul>
 				<li><a href="/user/apt_TradingL.do?LMC=LMC014&TMC=TMC004" <c:if test="${sessionScope.TMC eq 'TMC004'}">class="on"</c:if> title="<c:out value='아파트 실거래가 조회'/>"><c:out value="아파트 실거래가 조회"/></a></li>
+				<li><a href="/user/CampingList.do?LMC=LMC020&TMC=TMC005" <c:if test="${sessionScope.TMC eq 'TMC005'}">class="on"</c:if> title="<c:out value='여행정보'/>"><c:out value="여행정보"/></a></li>
 				<%-- <c:if test="${not empty INIT_DATA.USER_TOP_MENU}">
 					<c:forEach var="item" items="${INIT_DATA.USER_TOP_MENU}">
 						<c:if test="${item.MENU_CODE eq 'TMC003'}">
@@ -329,6 +330,10 @@
 					<li class="sub-depth2"><a href="/user/apt_ConceL.do?TMC=TMC004&LMC=LMC013" title="아파트분양권 거래이력"><span>아파트분양권 거래이력</span></a></li>
 					<li class="sub-depth2"><a href="/user/apt_CompareL.do?TMC=TMC004&LMC=LMC015" title="실거래가 비교"><span>실거래가 비교</span></a></li>
 					<li class="sub-depth2"><a href="/user/apt_OutCompareL.do?TMC=TMC004&LMC=LMC016" title="분양권 비교"><span>분양권 비교</span></a></li>
+				</ul>
+				<li class="hm-sub sub-depth1"><a href="#"><span>여행정보</span> <i class="ion-android-add" aria-hidden="true"></i></a>
+				<ul>
+					<li class="sub-depth2"><a href="/user/CampingList.do?TMC=TMC005&LMC=LMC020" title="캠핑장 조회"><span>캠핑장 조회</span></a></li>
 				</ul>
 			</ul>
 		</div>
