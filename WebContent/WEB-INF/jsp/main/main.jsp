@@ -18,7 +18,7 @@
 	<meta property="og:image" content="/static_root/images/common/meta_img.jpg">
 	<meta property="og:description" content="데이터 검색 " />
 
-	<title>아파트관리</title>
+	<title>아파트거래내역 | 여행정보</title>
 	<%@ include file="/static_root/inc/usr_top.jsp" %>
 	<script type="text/javascript">
 		$(document).ready(function() {

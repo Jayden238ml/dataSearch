@@ -733,5 +733,11 @@
 			, #{MODIFIEDTIME}
 		)
 	</insert>
+	
+	<select id="getCampingAll_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
+		SELECT
+			*
+		FROM CAMPING_INFO
+	</select>
 		
 </mapper>

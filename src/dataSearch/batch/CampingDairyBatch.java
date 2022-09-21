@@ -206,7 +206,7 @@ public class CampingDairyBatch extends QuartzJobBean
 				
 				// 이미지 정보 API 가져오기
 				
-				StringBuilder urlBuilder_img = new StringBuilder("http://apis.data.go.kr/B551011/GoCamping/basedList");
+				StringBuilder urlBuilder_img = new StringBuilder("http://apis.data.go.kr/B551011/GoCamping/imageList");
 				urlBuilder_img.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=FmRJggnPbuErC7S3g3D1K51bawXyTDd7hh%2FJZP%2Bdkyl5OdU79rlNJ%2BNZWXUfncUYfKzWtgUj8Ks6oxWvRQdPSg%3D%3D");
 				urlBuilder_img.append("&" + URLEncoder.encode("MobileOS", "UTF-8") + "=" + URLEncoder.encode("ETC", "UTF-8"));
 				urlBuilder_img.append("&" + URLEncoder.encode("MobileApp", "UTF-8") + "=" + URLEncoder.encode("WEB", "UTF-8"));
