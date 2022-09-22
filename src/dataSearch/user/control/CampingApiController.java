@@ -99,6 +99,14 @@ public class CampingApiController extends LincActionController{
 			List SidoList = commonFacade.list(dataMap);
 			dataMap.put("SidoList", SidoList);
 			
+			dataMap.put("procedureid", "Api.getCampingInfo_CNT");
+		    DataMap cntMap = this.commonFacade.getObject(dataMap);
+		    dataMap.put("TOTAL_CNT", cntMap.getString("TOTAL_CNT"));
+		    
+		    dataMap.put("procedureid", "Api.getCampingInfo_List");
+			List resultList = commonFacade.list(dataMap);
+			dataMap.put("resultList", resultList);
+			
 		} catch (Exception e) {
           	e.printStackTrace();
 		}

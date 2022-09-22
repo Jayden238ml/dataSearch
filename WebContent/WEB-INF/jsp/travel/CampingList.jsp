@@ -32,13 +32,40 @@
 		if("${INIT_DATA.SCH_TOP_LAWD_CD}" != ""){
 			fnGetSidoList("${INIT_DATA.SCH_TOP_LAWD_CD}");
 		}
+		
+		$(window).resize(function() { 
+			fnAutoResize();
+		});
 	});
+	
+	window.onload = function () {
+		fnAutoResize();
+	}
 	
 	//페이징
 	var page_List = function(pageNo) {
 	    $("#CURR_PAGE").val(pageNo);        
 	    $('#frm').submit();
 	};
+	
+	function fnAutoResize(){
+		var windowWidth = $( window ).width();	
+// 		alert($('.videoList').width());
+		$('.imgTd img').each(function() {
+// 			if($('.videoWrap tr td').width() < this.naturalWidth){
+// 				$(this).css("width", "100%");
+// 				$(this).css("height", "auto");
+// 			}else{
+// 				$(this).css("width", $('.videoList').width());
+				
+				$(this).css("width", 150);
+				$(this).css("text-align", "center");
+				$(this).css("margin", "auto");
+				$(this).css("display", "block");
+				$(this).css("height", "auto"); 
+// 			}
+		});
+	}
 	
 	function fnSearch(){
 		$('#frm').attr("action", "/user/apt_TradingL.do");
@@ -98,7 +125,7 @@
 			<li id="right">
 				<!-- 타이틀/네비 -->
 				<div class="titleNaviNew">
-					<h3 class="subTitle">아파트 실거래이력</h3>
+					<h3 class="subTitle">캠핑장 조회</h3>
 				</div>
 				<!-- 타이틀/네비 끝 -->
 
@@ -157,7 +184,6 @@
 								</c:if>
 								<c:if test="${INIT_DATA.DEFAULT ne 'Y'}">
 									총 <strong><fmt:formatNumber value="${INIT_DATA.TOTAL_CNT}" pattern="#,###"/></strong>&nbsp;건
-									&nbsp;&nbsp; (상세보기 시 클릭)
 								</c:if>
 							</dt>
 							<dd>
@@ -165,45 +191,29 @@
 							</dd> 
 						</dl>
 						<!-- 리스트 -->
-						<div class="bbsScrollSm">
-							<table summary="아파트분양권 거래이역">
-								<caption>아파트분양권 거래이역</caption>
+						<div class="bbsImageGrid videoWrap">
+							<table summary="캠핑장 목록">
+								<caption>캠핑장 목록</caption>
 								<colgroup>
-<!-- 									<col width="150" /> -->
-									<col width="150" />
-									<col width="80" />
-									<col width="80" />		
-									<col width="80" />
+									<col width="160" />
+									<col width="*" />
 								</colgroup>
-								<thead>
-									<tr>
-<!-- 										<th>주소</th> -->
-										<th>단지명(층수)</th>
-										<th>
-											거래금액
-											<c:if test="${INIT_DATA.DEFAULT ne 'Y'}">
-												<strong style="color:red;">&nbsp;(최고가)</strong>
-											</c:if>
-										</th>
-										<th>전용면적</th>
-										<th>거래일자</th>
-									</tr>
-								</thead>
 								<tbody>
 									<c:if test="${not empty INIT_DATA.resultList}">
 										<c:forEach items="${INIT_DATA.resultList}" var="item" varStatus="status">
-											<tr>
-<%-- 												<td><a href="javascript:fnDetail('${item.ROAD_NAME_BONBUN}', '${item.AREA_EXCLUSIVE_USE}', '${item.APARTMENT_NAME}');">${item.ADDRESS}</a></td> --%>
-												<td><a href="javascript:fnDetail('${item.ROAD_NAME_BONBUN}', '${item.AREA_EXCLUSIVE_USE}', '${item.APARTMENT_NAME}');">${item.APARTMENT_NAME}&nbsp;(${item.FLOOR}층)</a></td>
-												<td><a href="javascript:fnDetail('${item.ROAD_NAME_BONBUN}', '${item.AREA_EXCLUSIVE_USE}', '${item.APARTMENT_NAME}');">${item.DEAL_AMOUNT}(만원)</a></td>
-												<td><a href="javascript:fnDetail('${item.ROAD_NAME_BONBUN}', '${item.AREA_EXCLUSIVE_USE}', '${item.APARTMENT_NAME}');">${item.AREA_EXCLUSIVE_USE}</a></td>
-												<td><a href="javascript:fnDetail('${item.ROAD_NAME_BONBUN}', '${item.AREA_EXCLUSIVE_USE}', '${item.APARTMENT_NAME}');">${item.DEAL_YEAR}년&nbsp;${item.DEAL_MONTH}월&nbsp;${item.DEAL_DAY}일</a></td>
+											<tr class="ImgTr">
+													<td class="imgTd">
+														<div style="text-align : center;">
+															<img alt="${item.FACLTNM}" src="${item.FIRSTIMAGEURL}" style="max-height:90px;">
+														</div>
+													</td>
+												<td><a href="javascript:fnDetail('${item.CONTENTID}');">${item.FACLTNM}</a></td>
 											</tr>
 										</c:forEach>
 									</c:if>
 									<c:if test="${empty INIT_DATA.resultList}">
 										<tr>
-											<td class="no-list" colspan="4">검색결과가 없습니다.</td>
+											<td class="no-list" colspan="3">검색결과가 없습니다.</td>
 										</tr>
 									</c:if>
 								</tbody>
