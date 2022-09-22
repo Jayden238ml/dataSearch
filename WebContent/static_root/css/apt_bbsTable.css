@@ -720,7 +720,7 @@
 .bbsImageGrid {overflow-x:auto;}
 .bbsImageGrid table {width:100%; table-layout:fixed; border-spacing:0; border-collapse:collapse; border-top:#878ea1 1px solid; border-left:#e4e4e4 1px solid;}
 .bbsImageGrid table thead th {font-size:13px; padding:10px 0; font-weight:500; color:#333; letter-spacing:-1px; text-align:center; background:#f7f8fc; border-right:#e4e4e4 1px solid; border-bottom:#e4e4e4 1px solid;}
-.bbsImageGrid table tbody td {font-size:13px; padding:50px; text-align:center; border-bottom:#e4e4e4 1px solid;}
+.bbsImageGrid table tbody td {font-size:13px; padding:50px; text-align:center; border-right:#e4e4e4 1px solid; border-bottom:#e4e4e4 1px solid;}
 /* .bbsImageGrid table tbody img{max-width:100%;}  */
 .bbsImageGrid table tbody th {font-size:13px; padding:8px; text-align:left; border-right:#e4e4e4 1px solid; border-bottom:#e4e4e4 1px solid;}
 .bbsImageGrid table tbody td:last-child, .bbsImageGrid table tbody th:last-child {border-right:#e4e4e4 1px solid;}
