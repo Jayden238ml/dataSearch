@@ -739,5 +739,40 @@
 			*
 		FROM CAMPING_INFO
 	</select>
+	
+	<select id="getCampingInfo_CNT" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
+		SELECT
+			COUNT(*) AS TOTAL_CNT
+		FROM CAMPING_INFO
+		WHERE 1 = 1
+		AND FIRSTIMAGEURL != ''
+		AND INTRO != ''
+	</select>
+	
+	<select id="getCampingInfo_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
+		SELECT
+			TBA.*
+		FROM(
+			SELECT
+				TB.*
+				, CAST(CEILING((RNUM)/#{PAGE_SIZE}) AS CHAR)  AS PAGE
+				, CAST(#{TOTAL_CNT} - RNUM +1 AS CHAR) AS RNUMUM
+			FROM(
+				SELECT
+				T.*
+				, @RNUM := @RNUM + 1  AS RNUM
+			FROM(
+					SELECT
+						  A.*
+					FROM CAMPING_INFO A 
+					WHERE 1 = 1
+					AND FIRSTIMAGEURL != ''
+					AND INTRO != ''
+				)T 	,(SELECT @RNUM := 0 ) STR
+			)TB
+		)TBA
+		WHERE PAGE = #{CURR_PAGE}
+		ORDER BY CREATEDTIME DESC
+	</select>
 		
 </mapper>
