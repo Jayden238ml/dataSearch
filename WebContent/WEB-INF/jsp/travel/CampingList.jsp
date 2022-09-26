@@ -17,6 +17,7 @@
 	<meta property="og:description" content="데이터 검색 " />
 <title>여행정보 | 캠핑장 조회</title>
 <%@ include file="/static_root/inc/usr_top.jsp" %>
+<link type="text/css" rel="stylesheet" href="/static_root/css/camping.css" media=""/>
 <script type="text/javascript">
 	var PAGE_SIZE = "${INIT_DATA.PAGE_SIZE}"; 
 	$(document).ready(function(){
@@ -50,21 +51,22 @@
 	
 	function fnAutoResize(){
 		var windowWidth = $( window ).width();	
-// 		alert($('.videoList').width());
-		$('.imgTd img').each(function() {
+		var content_width = $('.imgTr').width();
+// 		alert(content_width - 758);
+// 		$('.imgTd img').each(function() {
 // 			if($('.videoWrap tr td').width() < this.naturalWidth){
 // 				$(this).css("width", "100%");
 // 				$(this).css("height", "auto");
 // 			}else{
 // 				$(this).css("width", $('.videoList').width());
-				
-				$(this).css("width", 150);
-				$(this).css("text-align", "center");
-				$(this).css("margin", "auto");
-				$(this).css("display", "block");
-				$(this).css("height", "auto"); 
+// 				alert(content_width - 758);
+// 				$(this).css("width", "100%");
+// 				$(this).css("text-align", "center");
+// 				$(this).css("margin", "auto");
+// 				$(this).css("display", "block");
+// 				$(this).css("height", "auto"); 
 // 			}
-		});
+// 		});
 	}
 	
 	function fnSearch(){
@@ -191,35 +193,33 @@
 							</dd> 
 						</dl>
 						<!-- 리스트 -->
-						<div class="bbsImageGrid videoWrap">
-							<table summary="캠핑장 목록">
-								<caption>캠핑장 목록</caption>
-								<colgroup>
-									<col width="160" />
-									<col width="*" />
-								</colgroup>
-								<tbody>
-									<c:if test="${not empty INIT_DATA.resultList}">
-										<c:forEach items="${INIT_DATA.resultList}" var="item" varStatus="status">
-											<tr class="ImgTr">
-													<td class="imgTd">
-														<div style="text-align : center;">
-															<img alt="${item.FACLTNM}" src="${item.FIRSTIMAGEURL}" style="max-height:90px;">
-														</div>
-													</td>
-												<td><a href="javascript:fnDetail('${item.CONTENTID}');">${item.FACLTNM}</a></td>
-											</tr>
-										</c:forEach>
-									</c:if>
-									<c:if test="${empty INIT_DATA.resultList}">
-										<tr>
-											<td class="no-list" colspan="3">검색결과가 없습니다.</td>
-										</tr>
-									</c:if>
-								</tbody>
-							</table>
+						<div class="area-common">
+							<c:if test="${not empty INIT_DATA.resultList}">
+								<c:forEach items="${INIT_DATA.resultList}" var="item" varStatus="status">
+									<article class="article-type-common article-type-thumbnail checked-item">
+					                    <a href="#" class="link-article">
+<%-- 					                      <p class="thumbnail" has-thumbnail="1" style="background-image: url(&quot;https://i1.daumcdn.net/thumb/S160x108/?scode=mtistory2&amp;fname=https://blog.kakaocdn.net/dn/bUa0ep/btrMIoAXFQ0/eD6mvAIKW80hExjJTx00Uk/img.jpg&quot;);"> <img src="${item.FIRSTIMAGEURL}" class="img-thumbnail" role="presentation"> --%>
+					                      <p class="thumbnail" has-thumbnail="1" style="background-image: url('${item.FIRSTIMAGEURL}');"> <img src="${item.FIRSTIMAGEURL}" class="img-thumbnail" role="presentation" title="${item.FACLTNM}">
+					                      </p>
+					                    </a>
+					                    <div class="article-content">
+					                      <a href="#" class="link-article">
+					                        <strong class="title">${item.FACLTNM}</strong>
+					                        <p class="summary">${item.INTRO}</p>
+					                      </a>
+					                      <div class="box-meta">
+					                        <a href="#" class="link-category">${item.ADDR1}</a>
+					                        <span class="date">${item.POSBLFCLTYCL}</span>
+<!-- 					                        <span class="reply"> -->
+<!-- 					                          <s_rp_count></s_rp_count> -->
+<!-- 					                        </span> -->
+					                      </div>
+					                    </div>
+					                  </article>
+								</c:forEach>
+							</c:if>
 						</div>
-						<p class="textPoint mbArea mt5">스크롤하실 수 있습니다.</p>
+<!-- 						<p class="textPoint mbArea mt5">스크롤하실 수 있습니다.</p> -->
 						<div class="listPaging mt30" id="paging_bar"></div>
 					</section>
 				</div>

@@ -30,7 +30,7 @@ response.setHeader("Cache-Control", "no-cache");
 <link type="text/css" rel="stylesheet" href="<c:out value='${COMMON_CSS_CONF}' />/apt_content.css" media=""/><!-- 개별컨텐츠 -->
 <link type="text/css" rel="stylesheet" href="<c:out value='${COMMON_CSS_CONF}' />/apt_main.css" media=""/><!-- 메인페이지 -->
 <link type="text/css" rel="stylesheet" href="<c:out value='${COMMON_CSS_CONF}' />/apt.css" media=""/><!-- 메인페이지 -->
-<link type="text/css" rel="stylesheet" href="<c:out value='${COMMON_CSS_CONF}' />/camp.css" media=""/><!-- 메인페이지 -->
+<%-- <link type="text/css" rel="stylesheet" href="<c:out value='${COMMON_CSS_CONF}' />/camp.css" media=""/><!-- 메인페이지 --> --%>
 <link type="text/css" rel="stylesheet" href="<c:out value='${COMMON_CSS_CONF}' />/nyroModal.css" media=""/>
 
 

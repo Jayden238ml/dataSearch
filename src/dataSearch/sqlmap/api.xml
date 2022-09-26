@@ -744,6 +744,9 @@
 		SELECT
 			COUNT(*) AS TOTAL_CNT
 		FROM CAMPING_INFO
+		WHERE 1 = 1
+		AND FIRSTIMAGEURL != ''
+		AND INTRO != ''
 	</select>
 	
 	<select id="getCampingInfo_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
@@ -762,6 +765,9 @@
 					SELECT
 						  A.*
 					FROM CAMPING_INFO A 
+					WHERE 1 = 1
+					AND FIRSTIMAGEURL != ''
+					AND INTRO != ''
 				)T 	,(SELECT @RNUM := 0 ) STR
 			)TB
 		)TBA
