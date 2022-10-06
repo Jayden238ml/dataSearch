@@ -265,5 +265,36 @@
  		AND GRP_CODE = '0003' 
  		ORDER BY EXPS_ORDR
  	</select>
+ 	
+ 	<select id="getCampingSido_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
+ 		SELECT
+ 			  DONM
+ 			, SEQ
+ 		FROM(
+ 			SELECT
+	 			  DONM
+	 			, CASE WHEN DONM = '광주시' THEN '5'
+			 	     WHEN DONM = '대구시' THEN '3'
+			 	     WHEN DONM = '대전시' THEN '6'
+			 	     WHEN DONM = '부산시' THEN '2'
+			 	     WHEN DONM = '서울시' THEN '1'
+			 	     WHEN DONM = '울산시' THEN '7'
+			 	     WHEN DONM = '인천시' THEN '4'
+			 	     WHEN DONM = '세종시' THEN '8'			 	     
+			 	     WHEN DONM = '경기도' THEN '9'
+			 	     WHEN DONM = '강원도' THEN '10'
+			 	     WHEN DONM = '충청북도' THEN '11'
+			 	     WHEN DONM = '충청남도' THEN '12'
+			 	     WHEN DONM = '전라북도' THEN '13'
+			 	     WHEN DONM = '전라남도' THEN '14'
+			 	     WHEN DONM = '경상북도' THEN '15'
+			 	     WHEN DONM = '경상남도' THEN '16'
+			 	     WHEN DONM = '제주도' THEN '17'
+			 	     END AS SEQ
+	 		FROM CAMPING_INFO
+	 		GROUP BY DONM
+ 		) A
+ 		ORDER BY cast(SEQ AS unsigned)
+ 	</select>
 	
 </mapper>

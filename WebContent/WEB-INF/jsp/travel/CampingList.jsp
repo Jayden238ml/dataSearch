@@ -70,14 +70,14 @@
 	}
 	
 	function fnSearch(){
-		$('#frm').attr("action", "/user/apt_TradingL.do");
+		$('#frm').attr("action", "/user/CampingList.do");
 		$('#frm').submit();
 	}
 	
 	function fnGetSidoList(){
 		$.ajax({
 			type: "POST",
-			url : "/api/getSidoList.do",
+			url : "/api/getCampingSidoList.do",
 			data:  $("#frm").serialize(),
 			dataType: "json",
 			success: function (transport) {
@@ -87,11 +87,10 @@
 	}
 	
 	function fnSetSido(SidoList){
-		$("#SCH_DONG").html("");
 		var resultHtml ="";
 		var row =  "<option value=''>시/군/구 선택</option>";
 		$.each(SidoList,function(key,json) {
-			row += '<option value="'+json.CODE+'">'+json.CODENM+'</option>';
+			row += '<option value="'+json.CODENM+'">'+json.CODENM+'</option>';
 		});
 		resultHtml += row;
 		$("#SCH_LAWD_CD").html(resultHtml);
@@ -152,12 +151,12 @@
 													<select name="SCH_TOP_LAWD_CD" id="SCH_TOP_LAWD_CD" title="광역시/도" class="select" onchange="fnGetSidoList();">
 														<option value="">시/도 선택</option>
 														<c:forEach var="item" items="${INIT_DATA.SidoList }" >
-															<option value="${item.CODE}" <c:if test="${item.CODE eq INIT_DATA.SCH_TOP_LAWD_CD}">selected="selected"</c:if> >${item.CODENM}</option>
+															<option value="${item.DONM}" <c:if test="${item.DONM eq INIT_DATA.SCH_TOP_LAWD_CD}">selected="selected"</c:if> >${item.DONM}</option>
 														</c:forEach>
 													</select>
 												</li>
 												<li>
-													<select name="SCH_LAWD_CD" id="SCH_LAWD_CD" title="학적상태" class="select">
+													<select name="SCH_LAWD_CD" id="SCH_LAWD_CD" title="시/군/구 선택" class="select">
 														<option value="">시/군/구 선택</option>
 													</select>
 												</li>
@@ -166,10 +165,15 @@
 										<li class="scharea2">
 											<ul>
 												<li>
-													<input type="text" name="SCH_APARTMENT_NAME" id="SCH_APARTMENT_NAME" title="단지명" value="${INIT_DATA.SCH_APARTMENT_NAME}" placeholder="단지명/시군구명" class="input" />
+													<select name="SCH_ANIMAL_YN" id="SCH_ANIMAL_YN" title="반려동물 여부" class="select">
+														<option value="">반려동물 여부</option>
+														<option value="가능" <c:if test="${'가능' eq INIT_DATA.SCH_ANIMAL_YN}">selected="selected"</c:if> >가능</option>
+														<option value="가능(소형견)" <c:if test="${'가능(소형견)' eq INIT_DATA.SCH_ANIMAL_YN}">selected="selected"</c:if> >가능(소형견)</option>
+														<option value="불가능" <c:if test="${'불가능' eq INIT_DATA.SCH_ANIMAL_YN}">selected="selected"</c:if> >불가능</option>
+													</select>
 												</li>
 												<li>
-													<input type="text" name="SCH_AREA_EXCLUSIVE_USE" id="SCH_AREA_EXCLUSIVE_USE" title="전용면적(㎡)" value="${INIT_DATA.SCH_AREA_EXCLUSIVE_USE}" placeholder="전용면적(㎡)" class="input" />
+													<input type="text" name="SCH_APARTMENT_NAME" id="SCH_APARTMENT_NAME" title="캠핑장명/테마/주소" value="${INIT_DATA.SCH_APARTMENT_NAME}" placeholder="캠핑장명/테마/주소" class="input" />
 												</li>
 											</ul>
 										</li>

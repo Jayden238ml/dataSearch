@@ -95,7 +95,7 @@ public class CampingApiController extends LincActionController{
 			dataMap.put("PAGE_SIZE",view_size);
 			
 			// 시도 리스트
-			dataMap.put("procedureid", "Common.getSido_List");
+			dataMap.put("procedureid", "Common.getCampingSido_List");
 			List SidoList = commonFacade.list(dataMap);
 			dataMap.put("SidoList", SidoList);
 			

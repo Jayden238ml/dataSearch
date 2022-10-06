@@ -276,6 +276,61 @@ public class DataApiController extends LincActionController{
 		return new ModelAndView("jsonView", dataMap);
 	}
 	
+	@RequestMapping({"/api/getCampingSidoList.do"}) 
+	public ModelAndView getCampingSidoList(@ModelAttribute("requestParam") DataMap dataMap, HttpServletRequest request, HttpServletResponse response){
+		try {
+			
+			String SCH_TOP_LAWD_CD = dataMap.getString("SCH_TOP_LAWD_CD");
+			String TMP_AREA_SIDO = "11";
+			if("강원도".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "42";
+			}else if("경기도".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "41";
+			}else if("경상남도".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "48";
+			}else if("경상북도".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "47";
+			}else if("광주시".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "29";
+			}else if("대구시".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "27";
+			}else if("대전시".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "30";
+			}else if("부산시".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "26";
+			}else if("세종시".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "36";
+			}else if("울산시".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "31";
+			}else if("인천시".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "28";
+			}else if("전라남도".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "46";
+			}else if("전라북도".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "45";
+			}else if("제주도".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "50";
+			}else if("충청남도".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "44";
+			}else if("충청북도".equals(SCH_TOP_LAWD_CD)){
+				TMP_AREA_SIDO = "43";
+			}
+			
+			dataMap.put("TMP_AREA_SIDO", TMP_AREA_SIDO);
+			dataMap.put("procedureid", "Common.getAreaSiGunGu_List");
+			List SidoList = commonFacade.list(dataMap);
+			dataMap.put("SidoList", SidoList);
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		
+		FlashMap fm = RequestContextUtils.getOutputFlashMap(request);
+		fm.put("TMC", dataMap.getString("TMC"));
+		fm.put("LMC", dataMap.getString("LMC"));
+		return new ModelAndView("jsonView", dataMap);
+	}
+	
 	
 	/**
 	 * 실거래가 상세

@@ -745,8 +745,24 @@
 			COUNT(*) AS TOTAL_CNT
 		FROM CAMPING_INFO
 		WHERE 1 = 1
-		AND FIRSTIMAGEURL != ''
-		AND INTRO != ''
+		<if test="SCH_TOP_LAWD_CD != null and SCH_TOP_LAWD_CD != ''">
+			AND DONM = #{SCH_TOP_LAWD_CD}
+		</if>
+		<if test="SCH_LAWD_CD != null and SCH_LAWD_CD != ''">
+			AND SIGUNGUNM = #{SCH_LAWD_CD}
+		</if>
+		<if test="SCH_ANIMAL_YN != null and SCH_ANIMAL_YN != ''">
+			AND ANIMALCMGCL = #{SCH_ANIMAL_YN}
+		</if>
+		<if test="SCH_APARTMENT_NAME != null and SCH_APARTMENT_NAME != ''">
+			AND (
+				FACLTNM LIKE CONCAT('%', #{SCH_APARTMENT_NAME},'%')
+				OR
+				ADDR1 LIKE CONCAT('%', #{SCH_APARTMENT_NAME},'%')
+				OR
+				POSBLFCLTYCL LIKE CONCAT('%', #{SCH_APARTMENT_NAME},'%')
+			)
+		</if>
 	</select>
 	
 	<select id="getCampingInfo_List" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
@@ -766,9 +782,27 @@
 						  A.*
 					FROM CAMPING_INFO A 
 					WHERE 1 = 1
-					AND FIRSTIMAGEURL != ''
-					AND INTRO != ''
+					<if test="SCH_TOP_LAWD_CD != null and SCH_TOP_LAWD_CD != ''">
+						AND DONM = #{SCH_TOP_LAWD_CD}
+					</if>
+					<if test="SCH_LAWD_CD != null and SCH_LAWD_CD != ''">
+						AND SIGUNGUNM = #{SCH_LAWD_CD}
+					</if>
+					<if test="SCH_ANIMAL_YN != null and SCH_ANIMAL_YN != ''">
+						AND ANIMALCMGCL = #{SCH_ANIMAL_YN}
+					</if>
+					<if test="SCH_APARTMENT_NAME != null and SCH_APARTMENT_NAME != ''">
+						AND (
+							FACLTNM LIKE CONCAT('%', #{SCH_APARTMENT_NAME},'%')
+							OR
+							ADDR1 LIKE CONCAT('%', #{SCH_APARTMENT_NAME},'%')
+							OR
+							POSBLFCLTYCL LIKE CONCAT('%', #{SCH_APARTMENT_NAME},'%')
+						)
+					</if>
+					ORDER BY FIRSTIMAGEURL IS NULL DESC, FIRSTIMAGEURL DESC	
 				)T 	,(SELECT @RNUM := 0 ) STR
+				ORDER BY INTRO IS NULL DESC, INTRO DESC
 			)TB
 		)TBA
 		WHERE PAGE = #{CURR_PAGE}
