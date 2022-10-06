@@ -87,23 +87,23 @@
 				<div class="mn_cont_btm">
 					<div id="cont_box" class="box_selfAc clearfix" >
 						<h3>아파트 실거래 이력</h3>
-						<p>아파트 실거래 이력 조회</p>
+						<p>[국토교통부 데이터] 아파트 실거래 이력 조회</p>
 						<a href="/user/apt_TradingL.do?L_TMC=TMC004&L_LMC=LMC014">바로 가기 <span>+</span></a>
 					</div>
 					<div id="cont_box" class="box_blue box_jinroRm clearfix" >
 						<h3>아파트 분양권 거래이력</h3>
-						<p>아파트 분양권 거래이력 조회</p>
+						<p>[국토교통부 데이터] 아파트 분양권 거래이력 조회</p>
 						<a href="/user/apt_ConceL.do?L_TMC=TMC004&L_LMC=LMC013">VIEW MORE <span>+</span></a>
 					</div>
 					<div id="cont_box" class="box_jobInfo clearfix" >
 						<h3>실거래가 비교</h3>
-						<p>실거래가 비교 조회</p>
+						<p>[국토교통부 데이터] 실거래가 비교 조회</p>
 						<a href="/user/apt_CompareL.do?L_TMC=TMC004&L_LMC=LMC015">바로 가기 <span>+</span></a>
 					</div>
 					<div id="cont_box" class="box_selfLs clearfix" >
-						<h3>분양권 비교</h3>
-						<p>분양권 비교 조회</p>
-						<a href="/user/apt_OutCompareL.do?L_TMC=TMC004&L_LMC=LMC016">바로 가기 <span>+</span></a>
+						<h3>캠핑장 조회</h3>
+						<p>[고캠핑 데이터] 전국 캠핑장 조회</p>
+						<a href="/user/CampingList.do?LMC=LMC020&TMC=TMC005">바로 가기 <span>+</span></a>
 					</div>
 					<%-- <div id="cont_box" class="box_majorRm clearfix">
 						<div class="nt_title clearfix">
