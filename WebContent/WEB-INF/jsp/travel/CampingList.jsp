@@ -202,9 +202,12 @@
 								<c:forEach items="${INIT_DATA.resultList}" var="item" varStatus="status">
 									<article class="article-type-common article-type-thumbnail checked-item">
 					                    <a href="#" class="link-article">
-<%-- 					                      <p class="thumbnail" has-thumbnail="1" style="background-image: url(&quot;https://i1.daumcdn.net/thumb/S160x108/?scode=mtistory2&amp;fname=https://blog.kakaocdn.net/dn/bUa0ep/btrMIoAXFQ0/eD6mvAIKW80hExjJTx00Uk/img.jpg&quot;);"> <img src="${item.FIRSTIMAGEURL}" class="img-thumbnail" role="presentation"> --%>
-					                      <p class="thumbnail" has-thumbnail="1" style="background-image: url('${item.FIRSTIMAGEURL}');"> <img src="${item.FIRSTIMAGEURL}" class="img-thumbnail" role="presentation" title="${item.FACLTNM}">
-					                      </p>
+					                      <c:if test="${not empty item.FIRSTIMAGEURL}">
+					                      	<p class="thumbnail" has-thumbnail="1" style="background-image: url('${item.FIRSTIMAGEURL}');"> <img src="${item.FIRSTIMAGEURL}" class="img-thumbnail" role="presentation" title="${item.FACLTNM}"></p>
+					                      </c:if>
+					                      <c:if test="${empty item.FIRSTIMAGEURL}">
+					                      	<p class="thumbnail" has-thumbnail="1" style="background-image: url('/static_root/images/content/no_camp.png');"> <img src="/static_root/images/content/no_camp.png" class="img-thumbnail" role="presentation" title="${item.FACLTNM}"></p>
+					                      </c:if>
 					                    </a>
 					                    <div class="article-content">
 					                      <a href="#" class="link-article">
