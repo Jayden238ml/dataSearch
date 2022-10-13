@@ -34,40 +34,13 @@
 			fnGetSidoList("${INIT_DATA.SCH_TOP_LAWD_CD}");
 		}
 		
-		$(window).resize(function() { 
-			fnAutoResize();
-		});
 	});
-	
-	window.onload = function () {
-		fnAutoResize();
-	}
 	
 	//페이징
 	var page_List = function(pageNo) {
 	    $("#CURR_PAGE").val(pageNo);        
 	    $('#frm').submit();
 	};
-	
-	function fnAutoResize(){
-		var windowWidth = $( window ).width();	
-		var content_width = $('.imgTr').width();
-// 		alert(content_width - 758);
-// 		$('.imgTd img').each(function() {
-// 			if($('.videoWrap tr td').width() < this.naturalWidth){
-// 				$(this).css("width", "100%");
-// 				$(this).css("height", "auto");
-// 			}else{
-// 				$(this).css("width", $('.videoList').width());
-// 				alert(content_width - 758);
-// 				$(this).css("width", "100%");
-// 				$(this).css("text-align", "center");
-// 				$(this).css("margin", "auto");
-// 				$(this).css("display", "block");
-// 				$(this).css("height", "auto"); 
-// 			}
-// 		});
-	}
 	
 	function fnSearch(){
 		$('#frm').attr("action", "/user/CampingList.do");
@@ -79,7 +52,7 @@
 			type: "POST",
 			url : "/api/getCampingSidoList.do",
 			data:  $("#frm").serialize(),
-			dataType: "json",
+// 			dataType: "json",
 			success: function (transport) {
 				fnSetSido(eval(transport.SidoList));
 			}
@@ -99,13 +72,9 @@
 		}
 	}
 	
-	function fnDetail(bonbun, area , apt_nm){
-		$("#ROAD_NAME_BONBUN").val(bonbun);
-		$("#AREA_EXCLUSIVE_USE").val(area);
-		$("#APARTMENT_NAME").val(apt_nm);
-		var param = "?L_TMC=TMC004&L_LMC=LMC014&ROAD_NAME_BONBUN=" + bonbun + "&AREA_EXCLUSIVE_USE=" + area + "&APARTMENT_NAME=" + escape(encodeURIComponent(apt_nm));
-		$('#frm').attr("action", "/api/aptDealDetail.do" + param);
-		$('#frm').submit();
+	function fnDetail_pop(idx){
+		gfnOpenLayerPopup('/common/index.do?jpath=/common/pop_camping&CONTENTID='+idx + '&TYPE=P');
+		
 	}
 	
 	
@@ -201,7 +170,7 @@
 							<c:if test="${not empty INIT_DATA.resultList}">
 								<c:forEach items="${INIT_DATA.resultList}" var="item" varStatus="status">
 									<article class="article-type-common article-type-thumbnail checked-item">
-					                    <a href="#" class="link-article">
+					                    <a href="javascript:fnDetail_pop('${item.CONTENTID}');" class="link-article">
 					                      <c:if test="${not empty item.FIRSTIMAGEURL}">
 					                      	<p class="thumbnail" has-thumbnail="1" style="background-image: url('${item.FIRSTIMAGEURL}');"> <img src="${item.FIRSTIMAGEURL}" class="img-thumbnail" role="presentation" title="${item.FACLTNM}"></p>
 					                      </c:if>
@@ -210,12 +179,12 @@
 					                      </c:if>
 					                    </a>
 					                    <div class="article-content">
-					                      <a href="#" class="link-article">
+					                      <a href="javascript:fnDetail_pop('${item.CONTENTID}');" class="link-article">
 					                        <strong class="title">${item.FACLTNM}</strong>
 					                        <p class="summary">${item.INTRO}</p>
 					                      </a>
 					                      <div class="box-meta">
-					                        <a href="#" class="link-category">${item.ADDR1}</a>
+					                        <a href="javascript:fnDetail_pop('${item.CONTENTID}');" class="link-category">${item.ADDR1}</a>
 					                        <span class="date">${item.POSBLFCLTYCL}</span>
 <!-- 					                        <span class="reply"> -->
 <!-- 					                          <s_rp_count></s_rp_count> -->

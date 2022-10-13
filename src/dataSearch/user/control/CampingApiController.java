@@ -21,7 +21,10 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.FlashMap;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.support.RequestContextUtils;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
@@ -29,8 +32,10 @@ import com.ibatis.common.logging.Log;
 import com.ibatis.common.logging.LogFactory;
 
 import dataSearch.framework.common.DataMap;
+import dataSearch.framework.common.LoginSession;
 import dataSearch.framework.common.control.LincActionController;
 import dataSearch.framework.core.CommonFacade;
+import dataSearch.framework.util.BrowserUtil;
 import dataSearch.framework.util.PUtil;
 
 @Controller
@@ -385,6 +390,73 @@ public class CampingApiController extends LincActionController{
 		
 		return new ModelAndView(modelName, "INIT_DATA", dataMap);
 	}
+	
+	
+	@RequestMapping({"/user/getCampingDetail_Info.do"})
+	public ModelAndView getCampingDetail_Info(@ModelAttribute("requestParam") DataMap dataMap, HttpServletRequest request, HttpServletResponse response) {
+
+	    try
+	    {
+	    	dataMap.put("procedureid", "Api.getCamping_Dtail_info");
+			DataMap dtailMap = this.commonFacade.getObject(dataMap);
+			dataMap.put("dtailMap", dtailMap);
+			
+//			ArrayList list_img = new ArrayList();
+//				
+//			StringBuilder urlBuilder_img = new StringBuilder("http://apis.data.go.kr/B551011/GoCamping/imageList");
+//			urlBuilder_img.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=FmRJggnPbuErC7S3g3D1K51bawXyTDd7hh%2FJZP%2Bdkyl5OdU79rlNJ%2BNZWXUfncUYfKzWtgUj8Ks6oxWvRQdPSg%3D%3D");
+//			urlBuilder_img.append("&" + URLEncoder.encode("MobileOS", "UTF-8") + "=" + URLEncoder.encode("ETC", "UTF-8"));
+//			urlBuilder_img.append("&" + URLEncoder.encode("MobileApp", "UTF-8") + "=" + URLEncoder.encode("WEB", "UTF-8"));
+//			urlBuilder_img.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("40", "UTF-8"));
+//			urlBuilder_img.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8"));
+//			urlBuilder_img.append("&" + URLEncoder.encode("contentId", "UTF-8") + "=" + URLEncoder.encode(dataMap.getString("CONTENTID").toString(), "UTF-8"));
+//			
+//			URL url_img = new URL(urlBuilder_img.toString());
+//			
+//			XmlPullParserFactory factory_img = XmlPullParserFactory.newInstance();
+//			factory_img.setNamespaceAware(true);
+//	        XmlPullParser xpp_img = factory_img.newPullParser();
+//	        BufferedInputStream bis_img = new BufferedInputStream(url_img.openStream());
+//	        xpp_img.setInput(bis_img, "utf-8");
+//
+//	        String tag_img = null;
+//	        int event_type_img = xpp_img.getEventType();
+//
+//	        DataMap tempMap_img = new DataMap();
+
+//	        while (event_type_img != 1) {
+//	          if (event_type_img == 2) {
+//	        	  tag_img = xpp_img.getName();
+//	          } else if (event_type_img == 4)
+//	          {
+//	            if ("contentId".equals(tag_img) && !"".equals(xpp_img.getText().replace("\n    ", ""))) {tempMap_img.put("CONTENTID", xpp_img.getText()); }
+//	            if ("serialnum".equals(tag_img) && !"".equals(xpp_img.getText().replace("\n    ", ""))) {tempMap_img.put("SERIALNUM", xpp_img.getText()); }
+//	            if ("imageUrl".equals(tag_img) && !"".equals(xpp_img.getText().replace("\n    ", ""))) {tempMap_img.put("IMAGEURL", xpp_img.getText()); }
+//	            if ("createdtime".equals(tag_img) && !"".equals(xpp_img.getText().replace("\n    ", ""))) {tempMap_img.put("CREATEDTIME", xpp_img.getText()); } 
+//	            if ("modifiedtime".equals(tag_img) && !"".equals(xpp_img.getText().replace("\n    ", ""))) {tempMap_img.put("MODIFIEDTIME", xpp_img.getText()); } 
+//	          }
+//	          else if (event_type_img == 3) {
+//	        	  tag_img = xpp_img.getName();
+//	            if (tag_img.equals("item")) {
+//	            	list_img.add(tempMap_img);
+//	            	tempMap_img = new DataMap();
+//	            }
+//	          }
+//
+//	          event_type_img = xpp_img.next();
+//	        }
+	        
+//	        dataMap.put("list_img", list_img);
+			
+	    } catch (Exception e) {
+	      e.printStackTrace();
+	    }
+	    FlashMap fm = RequestContextUtils.getOutputFlashMap(request);
+		fm.put("TMC", dataMap.getString("TMC"));
+		fm.put("LMC", dataMap.getString("LMC"));
+	    
+	    return new ModelAndView("jsonView", dataMap);
+	  }
 	
 
 }

@@ -808,5 +808,13 @@
 		WHERE PAGE = #{CURR_PAGE}
 		ORDER BY CREATEDTIME DESC
 	</select>
+	
+	
+	<select id="getCamping_Dtail_info" parameterType="java.util.HashMap" resultType="dataSearch.framework.common.DataMap">
+		SELECT
+			*
+		FROM CAMPING_INFO
+		WHERE CONTENTID = #{CONTENTID}
+	</select>
 		
 </mapper>
