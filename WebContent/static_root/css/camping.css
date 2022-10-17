@@ -4536,4 +4536,70 @@ html {
   margin: 30px auto
 }
 
+.main-visual-slick {width:100%; height:850px; overflow:hidden;}
+.main-visual-slick .mvs-item {position:relative; height:850px;}
 
+.main-visual-slick .slick-prev {position:absolute; top:50%; margin:0 0 0 5%; padding:10px; font-size:50px; color:#fff; border:none; background:none; z-index:9;}
+.main-visual-slick .slick-next {position:absolute; top:50%; right:0; margin:0 5% 0 0; padding:10px; font-size:50px; color:#fff; border:none; background:none; z-index:9;}
+
+@media all and (max-width:479px) {
+.main-visual-slick {height:550px;}
+.main-visual-slick .mvs-item {height:550px;}
+.main-visual-slick .slick-prev {margin:-40px 0 0 3%; font-size:20px;}
+.main-visual-slick .slick-next {margin:-40px 3% 0 0; font-size:20px;}
+}
+@media all and (min-width:480px) and (max-width:767px) {
+.main-visual-slick {height:550px;}
+.main-visual-slick .mvs-item {height:550px;}
+.main-visual-slick .slick-prev {margin:-40px 0 0 3%; font-size:20px;}
+.main-visual-slick .slick-next {margin:-40px 3% 0 0; font-size:20px;}
+}
+@media all and (min-width:768px) and (max-width:991px) {
+.main-visual-slick .slick-prev {margin:-40px 0 0 3%; font-size:40px;}
+.main-visual-slick .slick-next {margin:-40px 3% 0 0; font-size:40px;}
+}
+@media all and (min-width:992px) and (max-width:1199px) {
+.main-visual-slick .slick-prev {margin:-40px 0 0 3%;}
+.main-visual-slick .slick-next {margin:-40px 3% 0 0;}
+}
+
+@media all and (min-width:1200px) {
+
+}
+
+.camping_site_slide {width:100%; padding:15px 0; border-top:1px solid rgba(64,64,64,0.1); overflow:hidden;}
+.camping_site_slide ul {position:relative; width:1200px; height:62px; margin:0 auto; overflow:hidden;}
+.camping_site_slide ul li {float:left; display:table; width:230px; height:62px; margin:0 5px 2px 5px; box-sizing:border-box; border:1px solid #e5e5e5; overflow:hidden;}
+.camping_site_slide ul li a {display:table-cell; vertical-align:middle; width:100%; box-sizing:border-box; padding:15px;}
+
+.swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

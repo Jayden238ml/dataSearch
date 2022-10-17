@@ -18,6 +18,8 @@
 <title>여행정보 | 캠핑장 조회</title>
 <%@ include file="/static_root/inc/usr_top.jsp" %>
 <link type="text/css" rel="stylesheet" href="/static_root/css/camping.css" media=""/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script type="text/javascript">
 	var PAGE_SIZE = "${INIT_DATA.PAGE_SIZE}"; 
 	$(document).ready(function(){
@@ -34,7 +36,18 @@
 			fnGetSidoList("${INIT_DATA.SCH_TOP_LAWD_CD}");
 		}
 		
+		doFunc = function(){
+			var swiper = new Swiper(".mySwiper", {
+		        navigation: {
+		          nextEl: ".swiper-button-next",
+		          prevEl: ".swiper-button-prev",
+		        },
+		      });
+		}
+		
+		
 	});
+	
 	
 	//페이징
 	var page_List = function(pageNo) {
@@ -52,7 +65,7 @@
 			type: "POST",
 			url : "/api/getCampingSidoList.do",
 			data:  $("#frm").serialize(),
-// 			dataType: "json",
+			dataType: "json",
 			success: function (transport) {
 				fnSetSido(eval(transport.SidoList));
 			}
@@ -73,7 +86,101 @@
 	}
 	
 	function fnDetail_pop(idx){
-		gfnOpenLayerPopup('/common/index.do?jpath=/common/pop_camping&CONTENTID='+idx + '&TYPE=P');
+// 		gfnOpenLayerPopup('/common/index.do?jpath=/common/pop_camping&CONTENTID='+idx + '&TYPE=P&TMC=' + $('#TMC').val() + '&LMC=' + $('#LMC').val());
+		$('.tableView').hide();
+		if(idx != $('#CONTENTID').val()){
+			$('#CONTENTID').val(idx);
+			$('.swiper-wrapper').html('');
+			$('#detail_'+idx).show();
+			$.ajax({
+				url : "/user/getCampingDetail_Info.do",
+				data:  $("#frm").serialize(),
+				dataType: "json",
+				success: function (transport) {
+					dataSet(transport.dtailMap);
+					imgSet(transport.list_img);
+				},error : function(e) { //ERROR
+					alert("조회 중 에러가 발생 하였습니다.");
+				}
+			});
+		}
+	}
+	
+	function imgSet(imgList){
+		var img_html = '';
+// 		$('.swiper-wrapper').html('');
+// 		alert(imgList);
+		if(imgList != null){
+			$.each(imgList,function(key,json) {
+				img_html = '';
+				img_html += '<div class="swiper-slide"><img src="'+ json.IMAGEURL +'" title=""></div>';
+				$('.swiper-wrapper').append(img_html);
+			});
+				setTimeout(function() {
+					doFunc();
+				}, 2000);
+		}
+	}
+	
+	
+	function dataSet(camping_info){
+		$('.FACLTNM').html(camping_info.FACLTNM);
+		$('.ADDR').html(camping_info.ADDR1 + " " + camping_info.ADDR2);
+		if(camping_info.HOMEPAGE != ""){
+			$('.HOMEPAGE_TR').show();
+			$('.HOMEPAGE').html('<a href="'+ camping_info.HOMEPAGE +'" target="_blank">'+ camping_info.HOMEPAGE +'</a>');
+		}else{
+			$('.HOMEPAGE_TR').hide();
+		}
+		
+		if(camping_info.RESVEURL != ""){
+			$('.RESVEURL_TR').show();
+			$('.RESVEURL').html('<a href="'+ camping_info.RESVEURL +'" target="_blank">'+ camping_info.RESVEURL +'</a>');
+		}else{
+			$('.RESVEURL_TR').hide();
+		}
+		// 특징
+		if(camping_info.FEATURENM != ""){
+			$('.FEATURENM_TR').show();
+			$('.FEATURENM').html(camping_info.FEATURENM);
+		}else{
+			$('.FEATURENM_TR').hide();
+		}
+		// 소개
+		if(camping_info.LINEINTRO != ""){
+			$('.INTRO_TR').show();
+			$('.INTRO').html(camping_info.LINEINTRO);
+		}else{
+			$('.INTRO_TR').hide();
+		}
+		// 예약방법
+		if(camping_info.RESVECL != ""){
+			$('.RESVECL_TR').show();
+			$('.RESVECL').html(camping_info.RESVECL);
+		}else{
+			$('.RESVECL_TR').hide();
+		}
+		// 연락처
+		if(camping_info.TEL != ""){
+			$('.TEL_TR').show();
+			$('.TEL').html(camping_info.TEL);
+		}else{
+			$('.TEL_TR').hide();
+		}
+		// 부대시설
+		if(camping_info.SBRSCL != ""){
+			$('.SBRSCL_TR').show();
+			$('.SBRSCL').html(camping_info.SBRSCL);
+		}else{
+			$('.SBRSCL_TR').hide();
+		}
+		// 주변 이용 시설
+		if(camping_info.POSBLFCLTYCL != ""){
+			$('.POSBLFCLTYCL_TR').show();
+			$('.POSBLFCLTYCL').html(camping_info.POSBLFCLTYCL);
+		}else{
+			$('.POSBLFCLTYCL_TR').hide();
+		}
 		
 	}
 	
@@ -111,6 +218,7 @@
 							<input type="hidden" name="ROAD_NAME_BONBUN" id="ROAD_NAME_BONBUN" value="" />
 							<input type="hidden" name="AREA_EXCLUSIVE_USE" id="AREA_EXCLUSIVE_USE" value="" />
 							<input type="hidden" name="APARTMENT_NAME" id="APARTMENT_NAME" value="" />
+							<input type="hidden" name="CONTENTID" id="CONTENTID" value=""/>
 							<fieldset>
 								<div class="searchApt">
 									<ul>
@@ -192,6 +300,79 @@
 					                      </div>
 					                    </div>
 					                  </article>
+					                  <div class="tableView" id="detail_${item.CONTENTID}" style="display:none;">
+					                  <br/>
+										<table summary="캠핑장 상세">
+											<caption>캠핑장 상세</caption>
+											<colgroup>
+												<col width="20%">
+												<col width="30%">
+												<col width="20%">
+												<col width="*">
+											</colgroup>
+											<tbody>
+												<tr>
+													<th colspan="4" style="text-align:center;" class="FACLTNM"></th>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="swiper mySwiper">
+													      <div class="swiper-wrapper">
+<!-- 													        <div class="swiper-slide"><img src="https://gocamping.or.kr/upload/camp/10/thumb/thumb_720_1869epdMHtUyrinZWKFHDWty.jpg" title="Funky roots"></div> -->
+<!-- 													        <div class="swiper-slide"><img src="https://gocamping.or.kr/upload/camp/3605/7443RPycjqODND0kKBcw1X9X.jpg" title="The long and winding road"></div> -->
+<!-- 													        <div class="swiper-slide">Slide 3</div> -->
+<!-- 													        <div class="swiper-slide">Slide 4</div> -->
+<!-- 													        <div class="swiper-slide">Slide 5</div> -->
+<!-- 													        <div class="swiper-slide">Slide 6</div> -->
+<!-- 													        <div class="swiper-slide">Slide 7</div> -->
+<!-- 													        <div class="swiper-slide">Slide 8</div> -->
+<!-- 													        <div class="swiper-slide">Slide 9</div> -->
+													      </div>
+													      <div class="swiper-button-next"></div>
+													      <div class="swiper-button-prev"></div>
+													    </div>
+													</td>
+												</tr>
+												<tr>
+													<th>주소</th>
+													<td class="ADDR" colspan="3"></td>
+												</tr>
+												<tr class = "HOMEPAGE_TR">
+													<th>홈페이지</th>
+													<td class="HOMEPAGE" colspan="3"></td>
+												</tr>
+												<tr class = "RESVEURL_TR">
+													<th>예약페이지</th>
+													<td class="RESVEURL" colspan="3"></td>
+												</tr>
+												<tr class = "RESVECL_TR">
+													<th>예약방법</th>
+													<td class="RESVECL" colspan="3"></td>
+												</tr>
+												<tr class = "TEL_TR">
+													<th>연락처</th>
+													<td class="TEL" colspan="3"></td>
+												</tr>
+												<tr class = "SBRSCL_TR">
+													<th>부대시설</th>
+													<td class="SBRSCL" colspan="3"></td>
+												</tr>
+												<tr class = "POSBLFCLTYCLTR">
+													<th>주변 이용 시설</th>
+													<td class="POSBLFCLTYCL" colspan="3"></td>
+												</tr>
+												<tr class = "FEATURENM_TR">
+													<th>특징</th>
+													<td class="FEATURENM" colspan="3"></td>
+												</tr>
+												<tr class = "INTRO_TR">
+													<th>소개</th>
+													<td class="INTRO" colspan="3"></td>
+												</tr>
+											</tbody>
+										</table>
+									<br/>
+									</div>
 								</c:forEach>
 							</c:if>
 						</div>

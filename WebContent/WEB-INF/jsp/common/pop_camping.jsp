@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
 <title>로그인</title>
-<%@ include file="/static_root/inc/apt_top.jsp" %>
+<%@ include file="/static_root/inc/usr_top.jsp" %>
 <script type="text/javascript">
 
 	$(document).ready(function(){
@@ -15,45 +15,54 @@
 		$.ajax({
 			url : "/user/getCampingDetail_Info.do",
 			data:  $("#popFrm").serialize(),
-// 			data:  {"SCH_TOP_LAWD_CD" : "서울시"},
 			dataType: "json",
 			success: function (transport) {
-				alert(transport.SidoList);
-			},error : function(request,status,error) { //ERROR
-				alert("status:"+status);
+				dataSet(transport.dtailMap);
+				imgSet(transport.list_img);
+			},error : function(e) { //ERROR
+				alert("조회 중 에러가 발생 하였습니다.");
 			}
-			
-// 			type: "POST",
-// 			url : "/user/getCampingDetail_Info.do",
-// 			data:  $("#popFrm").serialize(),
-// 			dataType: "json",
-// 			success: function (dat) {
-// 				alert(dat.dtailMap);
-// 			},error : function(request,status,error) { //ERROR
-// 				alert(error);
-// 			}
 		});
-// 		$.ajax({
-// 			 type		: "POST"
-// 			,url		: "/getCampingDetail_Info.do"
-// 			,dataType	: "json"
-// 			,data		: {
-// 				"CONTENTID" : $('#CONTENTID').val()
-// 			}
-// 			,success : function(transport) {
-// 				alert(transport.dtailMap);
-// 			}
-			
-// 		});
 	}	
 	
+	function dataSet(dtailMap){
+		$('#FACLTNM').text(dtailMap.FACLTNM);
+	}
 	
+	function imgSet(imgList){
+		var img_html = '';
+		alert(imgList);
+		if(imgList != null){
+			$.each(imgList,function(key,json) {
+				img_html += '<div class="mvs-item" style="background:url("'+json.IMAGEURL+'") center top no-repeat; background-size:cover;">';
+				img_html += '	<div class="main-copy">';
+				img_html += '		<h1>보호중인 유기동물<br />이젠 주인이 되어 주세요.</h1>';
+				img_html += '		<div><a href="/user/animal/adoptAnimal.do">자세히보기</a></div>';
+				img_html += '	</div>';
+				img_html += '</div>';
+			});
+// 			for(var i = 0; i < imgList.size; i ++){
+// 				img_html += '<div class="mvs-item" style="background:url('/static_root/images/main/dog2.jpg') center top no-repeat; background-size:cover;">';
+// 				img_html += '</div>';
+// 			}
+		}
+		alert(img_html);
+		$('.main-visual-slick').html(img_html);
+// 		<div class="mvs-item" style="background:url('/static_root/images/main/dog2.jpg') center top no-repeat; background-size:cover;">
+// 			<div class="main-copy">
+// 				<h1>보호중인 유기동물<br />이젠 주인이 되어 주세요.</h1>
+// 				<div><a href="/user/animal/adoptAnimal.do">자세히보기</a></div>
+// 			</div>
+// 		</div>
+	}
 	
 </script>
 </head>
 <body>
 <form name="popFrm" id="popFrm" method="post">
 	<input type="hidden" name="CONTENTID" id="CONTENTID" value="${INIT_DATA.CONTENTID}"/>
+	<input type="hidden" name="TMC" id="TMC" value="${INIT_DATA.TMC}"/>
+	<input type="hidden" name="LMC" id="LMC" value="${INIT_DATA.LMC}"/>
 </form>
 	<div class="layerWrap680 login_pop_inner">
 		<div class="bg"></div>
@@ -68,16 +77,33 @@
 				</c:if>
 			</p>
 			<div id="loginDiv">
-				<h1>입주자<span>&nbsp;회원관리 시스템</span></h1>
-				<h2>발급받은 아이디와 비밀번호를 사용해 주세요.<br/>발급받지 않은 계정 로그인 시에는 카카오 또는 네이버로 로그인 해 주세요.</h2>
+				<h2 id="FACLTNM"></h2>
 				<div>&nbsp;</div>
 				<fieldset>
 					<legend>로그인</legend>
 					<dl>
 						<dt>
 							<ul>
-<!-- 								<li><input type="text" name="USER_ID" id="USER_ID" value="" title="아이디" class="lgID" placeholder="ID" maxlength="20" onkeyup="if(event.keyCode==13){fnAptLogin();}"/></li> -->
-<!-- 								<li><input type="password" name="USER_PWD" id="USER_PWD" value="" title="비밀번호" class="lgPW" placeholder="Password" onkeyup="if(event.keyCode==13){fnAptLogin();}"/></li> -->
+								<div class="main-visual-slick">
+<!-- 									<div class="mvs-item" style="background:url('/static_root/images/main/dog2.jpg') center top no-repeat; background-size:cover;"> -->
+<!-- 										<div class="main-copy"> -->
+<!-- 											<h1>보호중인 유기동물<br />이젠 주인이 되어 주세요.</h1> -->
+<!-- 											<div><a href="/user/animal/adoptAnimal.do">자세히보기</a></div> -->
+<!-- 										</div> -->
+<!-- 									</div>					 -->
+<!-- 									<div class="mvs-item" style="background:url('/static_root/images/main/dog1.jpg') center top no-repeat; background-size:cover;"> -->
+<!-- 										<div class="main-copy"> -->
+<!-- 											<h1>잃어버린 반려동물,<br />보호소에서 안전하게 보호하고 있습니다.</h1> -->
+<!-- 											<div><a href="/user/animal/findAnimal.do" >자세히보기</a></div> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
+<!-- 									<div class="mvs-item" style="background:url('/static_root/images/main/dog3.jpg') center top no-repeat; background-size:cover;"> -->
+<!-- 										<div class="main-copy"> -->
+<!-- 											<h1>반려동물을 잃어버렸나요?<br />주위에 널리 알려보세요.</h1> -->
+<!-- 											<div><a href="/user/Board/findBoard.do">자세히보기</a></div> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
+								</div>
 							</ul> 
 							<div>
 								<a href="javascript:fnDetail_info();">로그인</a>
