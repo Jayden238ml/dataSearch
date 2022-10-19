@@ -45,7 +45,20 @@
 					, @RNUM := @RNUM + 1  AS RNUM
 				FROM(
 					SELECT
-						  *
+						  DEAL_AMOUNT
+						, DEAL_YEAR
+						, APARTMENT_NAME
+						, DONG
+						, SIGUNGU
+						, DEAL_MONTH
+						, DEAL_DAY
+						, TRUNCATE(AREA_EXCLUSIVE_USE, 1)AS AREA_EXCLUSIVE_USE
+						, JIBUN
+						, REGIONAL_CODE
+						, FLOOR
+						, X_LOCATION
+						, Y_LOCATION
+						, ADDRESS
 					FROM PARCEL_OUT_INFO A
 					WHERE 1 = 1	
 					<if test="DEFAULT == 'Y'.toString()">
@@ -134,7 +147,7 @@
 					SELECT
 <!-- 						  A.* -->
 						  A.ROAD_NAME_BONBUN
-						, A.AREA_EXCLUSIVE_USE
+						, TRUNCATE(A.AREA_EXCLUSIVE_USE, 1)AS AREA_EXCLUSIVE_USE
 						, A.APARTMENT_NAME
 						, MAX(A.FLOOR) AS FLOOR
 						, MAX(A.DEAL_AMOUNT) AS DEAL_AMOUNT
@@ -194,7 +207,7 @@
 					  , MAX(DEAL_MONTH)AS DEAL_MONTH
 					  , MAX(DEAL_DAY)AS DEAL_DAY
 					  , ROAD_NAME_BONBUN
-					  , AREA_EXCLUSIVE_USE
+					  , TRUNCATE(AREA_EXCLUSIVE_USE, 1)AS AREA_EXCLUSIVE_USE
 					  , APARTMENT_NAME
 					  , MAX(FLOOR)AS FLOOR
 <!-- 					  , ADDRESS -->
