@@ -145,7 +145,7 @@ Log log = LogFactory.getLog(this.getClass());
 				){
 			paramMap.put("RETOK"	, "Y");
 		}else if("".equals(paramMap.getString("TMC")) && "".equals(paramMap.getString("LMC"))) {
-			paramMap.put("RETOK"	, "N");
+//			paramMap.put("RETOK"	, "N");
 		}
 		return;
 	}

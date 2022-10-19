@@ -355,6 +355,10 @@ public class DataApiController extends LincActionController{
 			List resultList = commonFacade.list(dataMap);
 			dataMap.put("resultList", resultList);
 			
+			dataMap.put("procedureid", "Api.getAptDealMinMax_List");
+			List MinMaxList = commonFacade.list(dataMap);
+			dataMap.put("MinMaxList", MinMaxList);
+			
 			if(resultList.size() > 0) {
 				dataMap.put("X_LOCATION", ((DataMap)resultList.get(0)).getString("X_LOCATION"));
 				dataMap.put("Y_LOCATION", ((DataMap)resultList.get(0)).getString("Y_LOCATION"));
@@ -414,6 +418,10 @@ public class DataApiController extends LincActionController{
 			dataMap.put("procedureid", "Api.getAptParcelOut_List");
 			List resultList = commonFacade.list(dataMap);
 			dataMap.put("resultList", resultList);
+			
+			dataMap.put("procedureid", "Api.getAptParcelOutMinMax_List");
+			List MinMaxList = commonFacade.list(dataMap);
+			dataMap.put("MinMaxList", MinMaxList);
 			
 			if(resultList.size() > 0) {
 				dataMap.put("X_LOCATION", ((DataMap)resultList.get(0)).getString("X_LOCATION"));

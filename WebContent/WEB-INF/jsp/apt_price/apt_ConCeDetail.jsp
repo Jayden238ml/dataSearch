@@ -185,6 +185,29 @@
 							<div class="videoWrap" style="color:#000000">
 								 <div id="chart-area"></div>
 							</div>
+							<br/>
+							<c:if test="${not empty INIT_DATA.MinMaxList}">
+								<div class="videoWrap" style="color:#000000">
+									<div class="bbsScrollSm">
+										<table summary="아파트분양권 거래이력">
+											<caption>아파트분양권 거래이력</caption>
+											<colgroup>
+												<col width="80" />
+												<col width="80" />
+											</colgroup>
+											<thead>
+												<c:forEach items="${INIT_DATA.MinMaxList}" var="item" varStatus="status">
+													<tr>
+														<th> ${item.DEAL_YEAR}년 최고금액 <font style="color:red;">${item.MAX_AMT}</font> (만원)</th>
+														<th> ${item.DEAL_YEAR}년 최저금액 <font style="color:blue;">${item.MIN_AMT}</font>(만원)</th>
+													</tr>
+												</c:forEach>
+											</thead>
+										</table>
+									</div>
+								</div>
+								<br/>
+							</c:if>
 							<div class="videoWrap" style="color:#000000">
 								<div class="bbsScrollSm">
 									<table summary="아파트분양권 거래이력">

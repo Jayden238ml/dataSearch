@@ -317,8 +317,11 @@ public class CampingApiController extends LincActionController{
 			
 			// ================================
 			
-			dataMap.put("procedureid", "Api.CampingImgData_Delete");
-			commonFacade.processDelete(dataMap);
+//			dataMap.put("procedureid", "Api.CampingImgData_Delete");
+//			commonFacade.processDelete(dataMap);
+			
+//			int start = Integer.parseInt(dataMap.getString("START"));
+//			int end = Integer.parseInt(dataMap.getString("END"));
 			
 			for(int i = 0; i < CampingList.size(); i ++){
 				DataMap insertMap = (DataMap) CampingList.get(i);
@@ -377,6 +380,7 @@ public class CampingApiController extends LincActionController{
 				commonFacade.processInsert(insertMap);
 				System.out.println("행 :::" + i);
 	        }
+	        System.out.println(dataMap.getString("END") + "건::: 종료");
 			
 			transactionManager.commit(status);
 		} catch (Exception e) {
